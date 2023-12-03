@@ -27,6 +27,17 @@ def get_countries():
         countries.append(row[0])
     return countries
 
+
+def get_available_countries():
+    countries = "SELECT latitude_deg, longitude_deg FROM airport, hints where hints.iso_country = airport.iso_country"
+    cursor = connection.cursor()
+    cursor.execute(countries)
+    result = cursor.fetchall()
+    countries = []
+    for row in result:
+        countries.append(row[0])
+    return countries
+
 def get_airport(country):
     sql = "select name from airport, hints "
     sql += "where airport.iso_country = hints.iso_country "
