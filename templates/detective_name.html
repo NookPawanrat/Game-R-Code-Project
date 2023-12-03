@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="../static/index.css">
     <title>R-code Project</title>
 </head>
-<body>
-    <img src="../static/images/logo ho3.webp" class="logo">
-    <p class="enter-name-text">Welcome, Agent. To unlock the classified files, please state your code name and proceed with caution.</p>
-    <form class="enter-name-div">
+<body class="enter-name-body">
+    <img src="../static/images/logo ho.webp" class="logo">
+    <p class="enter-name-text">Welcome, agent. To unlock the classified files, please state your code name.</p>
+    <form action="/set_name" class="enter-name-div" method="POST">
         <input class="enter-name-input" type="text" name="name" placeholder="Enter your name...">
         <input class="enter-name-submit" type="submit" value="OK">
     </form>

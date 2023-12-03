@@ -29,13 +29,13 @@ def get_countries():
 
 
 def get_available_countries():
-    countries = "SELECT latitude_deg, longitude_deg FROM airport, hints where hints.iso_country = airport.iso_country"
+    countries = "SELECT name, latitude_deg, longitude_deg, hints.country_name FROM airport, hints WHERE hints.iso_country = airport.iso_country GROUP BY airport.iso_country"
     cursor = connection.cursor()
     cursor.execute(countries)
     result = cursor.fetchall()
     countries = []
     for row in result:
-        countries.append(row[0])
+        countries.append({"name": row[0], "lat": row[1], "long": row[2], "country": row[3]})
     return countries
 
 def get_airport(country):
@@ -164,13 +164,8 @@ def check_location_exist(answer):
         return
 
 
-def set_player_name():
-    global name
-    global id
-    name = input("Enter your name, detective: ")
-    name = name.title()
-    sql = f"INSERT INTO detective_game(detective_name) VALUES('{name}');"
+def set_player_name(det_name):
+    sql = f"INSERT INTO detective_game(detective_name) VALUES('{det_name}');"
     cursor = connection.cursor()
     cursor.execute(sql)
-    id = cursor.lastrowid
-    return name
+    return

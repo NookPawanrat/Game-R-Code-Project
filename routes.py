@@ -1,20 +1,31 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
+import json
 import db_functions as db
 
 app = Flask(__name__)
 
+@app.route('/detective_name')
+def detective_name():
+    return render_template('detective_name.html')
+
+@app.route('/set_name', methods=["POST"])
+def set_detective_name():
+    name = request.form["name"]
+    db.set_player_name(name)
+    return redirect('/howto')
+
+
+@app.route('/howto')
+def howto():
+    return render_template('howto.html')
 
 @app.route('/countries')
 def index():
-    data = [{"nombre": "Reino Unido", "lat": 51.509865, "long": -0.118092},
-                 {"nombre": "Argentina", "lat": -34.611778, "long": -58.417309},
-                 {"nombre": "Tailandia", "lat": 13.756331, "long": 100.501765},
-                 {"nombre": "Egipto", "lat": 30.033, "long": 31.233},
-                 {"nombre": "Australia", "lat": -25.274398, "long": 133.775136},
-                 {"nombre": "Brasil", "lat": -14.235004, "long": -51.92528},
-                 {"nombre": "China", "lat": 35.86166, "long": 104.195397}]
-    return render_template('countries.html', data= data)
+    return render_template('countries.html')
 
+@app.route('/get_countries')
+def get_countries():
+    return db.get_available_countries()
 
 if __name__ == '__main__':
     app.run(debug=True)

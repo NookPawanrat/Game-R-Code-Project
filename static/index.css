@@ -7,23 +7,26 @@
 }
 
 body{
+    background-image: url("images/background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom right;
+    min-height: 97.8vh;
+    font-family: var(--font);
+}
+
+.enter-name-body{
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    min-height: 97.8vh;
-    background-image: url("images/background.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom right;
-    font-family: var(--font);
-    text-align: center;
 }
 
 .logo{
-    margin: 0 auto;
-    height: 15rem;
-    width: 18rem;
+    margin: 3rem auto;
+    height: 5rem;
+    width: 13rem;
 }
 
 .enter-name-text{
@@ -74,7 +77,74 @@ body{
 }
 
 .map{
-    height: 400px;
-    width: 100%;
+    display: flex;
+    margin: auto;
+    height: 80vh;
+    width: 90vw;
     border-radius: 50px;
+}
+
+.small-logo{
+    margin: 1rem 3rem;
+    width: 10rem;
+}
+
+.howto-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    margin: auto;
+    background-color: var(--white);
+    width: 80vw;
+    height: 70vh;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.howto-h1{
+    color: var(--bordeaux);
+    font-size: 50px;
+    margin: 1rem;
+}
+
+.howto-inner-div {
+    overflow: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    margin: -3px auto;
+    border: 2px solid var(--bordeaux);
+    border-radius: 30px;
+    width: 80%;
+    height: 18rem;
+    padding: 3rem;
+}
+
+.howto-inner-div::-webkit-scrollbar{
+    display: none
+}
+
+.howto-p{
+    scroll-snap-align: start;
+    font-size: 20px;
+    padding: 3rem;
+    width: 70%;
+    margin: auto;
+}
+
+.button{
+    display: flex;
+    margin: 1rem auto;
+    background-color: var(--white);
+    color: var(--bordeaux);
+    padding: 1rem 8rem;
+    border-radius: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.button:hover{
+    color: var(--white);
+    background-color: var(--bordeaux);
+    border: none;
 }
