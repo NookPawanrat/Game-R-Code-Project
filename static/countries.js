@@ -6,7 +6,7 @@ function init_map(countries){
 
     let ricina_icon = L.icon({
         iconUrl: '../static/images/ricina icon.webp',
-        iconSize: [15, 15],
+        iconSize: [50, 30],
         popupAnchor: [0, -10]
       });
 
