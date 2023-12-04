@@ -164,8 +164,9 @@ def check_location_exist(answer):
         return
 
 
-def set_player_name(det_name):
+def set_player_name(self, det_name):
     sql = f"INSERT INTO detective_game(detective_name) VALUES('{det_name}');"
+    self.name = det_name;
     cursor = connection.cursor()
     cursor.execute(sql)
     return

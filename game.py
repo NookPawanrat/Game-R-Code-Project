@@ -32,7 +32,7 @@ class Game:
         # a list of country objects, randomly generated when game object created
         self.visited_location = countries
         # the last country object in visited_location
-        self.crime_location = self.visited_location[-1]
+#        self.crime_location = self.visited_location[-1]
         self.solved = 0
 
     def set_random_locations(self):

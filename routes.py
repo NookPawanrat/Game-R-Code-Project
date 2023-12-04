@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 import json
 import db_functions as db
+import game
 
 app = Flask(__name__)
 
@@ -11,8 +12,8 @@ def home():
 
 @app.route("/dashboard")
 def dashboard():
-    return render_template("dashboard.html", playerName=p.name, playerNumber=p.id, country=p.current_location,
-                           hint=test.visited_location[0]["hint"], missionLeft=len(test.visited_location)-test.solved)
+    return render_template("dashboard.html", playerName=game.p.name, playerNumber=game.p.id, country=game.p.current_location,
+                           hint=game.test.visited_location[0]["hint"], missionLeft=len(game.test.visited_location)-game.test.solved)
 
 @app.route("/answer", methods=['POST'])
 def answer():
@@ -41,7 +42,8 @@ def howtoplay():
 
 @app.route("/countries")
 def showcountries():
-    return render_template("countries.html")
+    data = db.get_available_countries()
+    return render_template("countries.html", data= data)
 
 @app.route('/detective_name')
 def detective_name():
