@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link href="../static/dashboard.css" rel="stylesheet">
+</head>
+<body>
+<div class="dashboard">
+<header>
+    <div id="logoho">
+       <img src="/static/images/logo%20ho.webp" alt="Detective icon and the game title 'R-CODE Project'">
+    </div>
+    <div id="player">
+        <img src="/static/images/badge%20icon.webp" alt="An icon of police badge">
+        <p>Agent: {{playerName}}<br>Agent number: {{playerNumber}}</p>
+    </div>
+    <div id="location">
+        <p>You are now in:<br><img src="/static/images/location%20icon.webp" alt="An map pin icon">{{country}}</p>
+    </div>
+</header>
+<main>
+    <section>
+        <h1>Mission</h1>
+        <div id="hint">{{hint}}</div>
+        <form action="http://127.0.0.1:5000/answer" method="POST">
+            <input class="answerinput" type="text" name="answer" placeholder="Enter your answer...">
+            <input type="submit" name="submit" value="SEND">
+        </form>
+    </section>
+</main>
+<footer>
+    <div id="ricinastat">
+        <h2>Ricina Status</h2>
+        <div class="ricina"><img src="/static/images/ricina%20icon.webp"></div>
+        <div class="ricina"><img src="/static/images/ricina%20icon.webp"></div>
+        <div class="ricina"><img src="/static/images/ricina%20icon.webp"></div>
+        <div class="ricina"><img src="/static/images/ricina%20icon.webp"></div>
+        <div class="ricina"><img src="/static/images/ricina%20icon.webp"></div>
+    </div>
+    <div id="missionleft">
+        <p>{{missionLeft}}</p>
+        <p>missions to win</p>
+    </div>
+    <div id="buttons">
+        <button class="dashboardbutton" id="howtoplay">HOW TO PLAY</button>
+        <button class="dashboardbutton" id="showcountries">SHOW ALL COUNTRIES</button>
+        <button class="dashboardbutton" id="exit">EXIT</button>
+    </div>
+</footer>
+</div>
+<script src="/static/script/dashboard_script.js" defer></script>
+</body>
+</html>
