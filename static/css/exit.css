@@ -1,16 +1,16 @@
 @font-face {
     font-family: 'bold';
-    src: url("../static/font/Bold.ttf");
+    src: url("../font/IBMPlexMono-Bold.ttf") format("truetype");
+
 }
 @font-face {
     font-family: 'regular';
-    src: url("../static/font/Regular.ttf");
+    src: url("../font/IBMPlexMono-Regular.ttf") format("truetype");
 }
-
 body {
     margin: 0;
     padding: 0;
-    background: url(../static/images/page-photo.png) center center fixed;
+    background: url(../images/page-photo.png) center center fixed;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -45,7 +45,7 @@ body {
     background-color: transparent;
     border: none;
     color:#8C1026;
-    font-family: bold;
+    font-family: 'bold';
     font-size: 18px;
     cursor: pointer;
 }

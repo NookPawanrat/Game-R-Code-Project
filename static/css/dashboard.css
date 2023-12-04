@@ -4,18 +4,23 @@
     --green:#2D5951;
     --red: #F23558;
 }
-
 @font-face {
-    font-family: "IBM Plex Mono";
-    src: url("../static/fonts/IBMPlexMono-Regular.ttf") format("truetype");
+    font-family: 'bold';
+    src: url("../font/IBMPlexMono-Bold.ttf") format("truetype");
+
 }
+@font-face {
+    font-family: 'regular';
+    src: url("../font/IBMPlexMono-Regular.ttf") format("truetype");
+}
+
 
 html {
     font-family: "IBM Plex Mono", sans-serif;
 }
 
 body {
-    background-image: url("/static/images/dash board BG.webp");
+    background-image: url("../images/dash board BG.webp");
     align-items: center;
 }
 
@@ -123,7 +128,6 @@ form {
     color: #EEEBEB;
     font-family: "IBM Plex Mono", sans-serif;
     font-size: 18px;
-    font-weight: bold;
 }
 
 ::placeholder {

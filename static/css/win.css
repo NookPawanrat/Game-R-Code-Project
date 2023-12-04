@@ -1,16 +1,23 @@
+:root {
+    --white: #EEEBEB;
+    --bordeaux: #8C0F26;
+    --green:#2D5951;
+    --red: #F23558;
+}
 @font-face {
     font-family: 'bold';
-    src: url("../static/font/Bold.ttf");
+    src: url("../font/IBMPlexMono-Bold.ttf") format("truetype");
+
 }
 @font-face {
     font-family: 'regular';
-    src: url("../static/font/Regular.ttf");
+    src: url("../font/IBMPlexMono-Regular.ttf") format("truetype");
 }
 
 body {
     margin: 0;
     padding: 0;
-    background: url(../static/images/page-photo.png) center center fixed;
+    background: url(../images/background.webp) center center fixed;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -40,7 +47,7 @@ body {
     text-align: center;
 }
 .again input{
-     background-color: #EEEBEB;
+    background-color: #EEEBEB;
     border: none;
     color:#8C1026;
     font-size: 20px;
@@ -64,12 +71,12 @@ body {
     left: 45%;
     position: absolute;
 }
-.over {
+.title {
     text-align: center;
     padding: 10px;
     font-family:"bold";
     font-size: 50px;
-    color: #8C1026;
+    color: #2D5951;
 }
 .text{
     text-align: center;
@@ -78,33 +85,33 @@ body {
     font-size: 28px;
     color: #26010B;
 }
+
 .small-text{
     position: fixed;
-    right: 320px;
-    top: 300px;
+    right: 350px;
+    top: 270px;
     font-family: "regular";
     font-size: 25px;
     color: #26010B;
 }
 
-
 .badge{
      position: absolute;
-    top: 42%;
-    left: 5%;
+    top: 36%;
+    left: 6%;
 }
 .name{
     position: absolute;
-    top: 70%;
-    left: 35%;
+    top: 64%;
+    left: 36%;
     font-family: "regular";
     color: #EEEBEB;
     font-size: 20px;
 }
 .number{
     position: absolute;
-    top: 78%;
-    left: 40%;
+    top: 72%;
+    left: 41%;
     font-family: "regular";
     color: #EEEBEB;
     font-size: 16px;
