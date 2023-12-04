@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exit</title>
     <link rel="stylesheet" type="text/css"  href="../static/exit.css">
-    <script src="../static/js/exitOrBackToMission.js"></script>
 
 
 </head>
@@ -22,17 +21,21 @@
 
         <div class="button-red">
             <form action="#" >
-            <input type="button" value="QUIT" onclick="quitClick()">
+            <input type="button" value="QUIT">
             </form>
         </div>
         <div  class="button-green">
             <form action="#">
-            <input type="button" value="BACK TO MISSION" onclick="backToMission()">
+            <input type="button" value="BACK TO MISSION">
         </form>
         </div>
 
 
     </div>
-
+<script>
+    document.querySelector('input[value="BACK TO MISSION"]').addEventListener('click', function(){
+      window.location.href = 'http://127.0.0.1:5000/dashboard';
+    })
+</script>
 </body>
 </html>

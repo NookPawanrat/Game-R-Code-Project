@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Correct</title>
     <link rel="stylesheet" type="text/css"  href="../static/correct.css">
-    <script src="../static/js/answersCheck.js"></script>
-
 </head>
 <body>
     <div id="logo">
@@ -39,13 +37,15 @@
 
 
     <div class="next">
-            <form action="#" >
-            <input type="button" value="NEXT MISSION" onclick="nextMission()">
-            </form>
+        <form>
+            <input type="button" value="NEXT MISSION">
+        </form>
     </div>
 
-
-
-
+<script>
+    document.querySelector('input').addEventListener('click', function(){
+      window.location.href = 'http://127.0.0.1:5000/dashboard';
+    })
+</script>
 </body>
 </html>

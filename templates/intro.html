@@ -16,8 +16,15 @@
     </div>
     <div class="button-space">
         <button id="how-to-play">HOW TO PLAY</button>
-        <button id ="skip" type="button" onclick="location.href='mission-file.html'">SKIP</button>
+        <button id ="skip" type="button">SKIP</button>
     </div>
-
+<script>
+  document.getElementById('how-to-play').addEventListener('click', function(){
+    window.location.href = 'http://127.0.0.1:5000/howto';
+  })
+  document.getElementById('skip').addEventListener('click', function(){
+    window.location.href = 'http://127.0.0.1:5000/file';
+  })
+</script>
 </body>
 </html>
