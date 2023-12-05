@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game over</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/gameOver.css">
+    <script src="../static/countries.js" defer></script>
+    <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/win.css">
+    <title>R-Code Project</title>
 </head>
 <body>
-   <div id="logo">
-        <img src="../static/images/logo.png" height="157" width="268">
-    </div>
-   <div id="content-box">
-        <h2 class="over">GAME OVER!</h2>
-        <p class="text">Sorry Agent {{name}},<br>
-            We can not catch the criminal this time.<br>
-            Let's try again.
+    <img src="../static/images/logo%20ho.webp" class="logo">
+    <div class="popup-container">
+        <h2 class="title bordeaux">GAME OVER!</h2>
+        <p class="text medium">Sorry Agent {{name}}, you did not catch the criminal this time.<br>
+            Try again.
         </p>
-       <img class='badge' src="../static/images/badge%20block.png" height="360" width="640"/>
-        <p class="name">{{name}}</p>
-        <p class="number">{{number}}</p>
-
-        <p class="small-text">Mission:{{}}<br>
-            Success:{{}}<br>
-            Fail:{{}}
-        </p>
+        <div class="flex-container-center popup-inside-container">
+            <div class="flex-container-center container badge-container">
+                <img src="../static/images/badge%20icon.webp" class="badge-image">
+                <div class="text-badge">
+                    <p>Agent: {{name}}</p>
+                    <p>Agent number: {{number}}</p>
+                </div>
+            </div>
+            <div class="congrats-text-container">
+                <p>Mission:{{}}</p>
+                <p>Success:{{}}</p>
+                <p>Fail:{{}}</p>
+            </div>
+        </div>
     </div>
 
-    <div class="again">
-            <form action="#" >
-            <input type="button" value="PLAY AGAIN">
-            </form>
-    </div>
+   <form action="#" >
+       <input class="flex-container-center button" type="button" value="PLAY AGAIN" onclick="nextMission()">
+   </form>
 </body>
 </html>

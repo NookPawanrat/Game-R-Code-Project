@@ -104,9 +104,8 @@ def file():
 
 @app.route("/dashboard")
 def dashboard():
-    return render_template("dashboard.html", playerName=p.name, playerNumber=p.id, country=p.current_location,
-                           hint=test.visited_location[0]["hint"], missionLeft=len(test.visited_location)-test.solved)
-
+    return render_template("dashboard.html", playerName=game.p.name, playerNumber=game.p.id, country=game.p.current_location,
+                           hint=game.test.visited_location[0]["hint"], missionLeft=len(game.test.visited_location)-game.test.solved)
 
 @app.route("/answer", methods=['POST'])
 def answer():
@@ -133,9 +132,6 @@ def wrong():
 def showcountries():
     return render_template("countries.html")
 
-@app.route('/detective_name')
-def detective_name():
-    return render_template('detective_name.html')
 
 @app.route('/set_name', methods=["POST"])
 def set_detective_name():

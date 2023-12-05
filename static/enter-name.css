@@ -1,0 +1,26 @@
+.logo-enter-name{
+    align-self: center;
+    margin: 3rem auto;
+}
+
+.enter-name-body{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.enter-name-text{
+    color: var(--white);
+    width: 60%;
+    align-self: center;
+    margin: 0;
+}
+
+.enter-name-div{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 60%;
+}
