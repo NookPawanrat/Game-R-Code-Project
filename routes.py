@@ -3,6 +3,7 @@ import json
 import db_functions as db
 import mysql.connector
 
+
 app = Flask(__name__)
 
 connection = mysql.connector.connect(
@@ -95,7 +96,7 @@ def howto():
 
 @app.route("/intro")
 def intro():
-    return render_template("intro.html")
+        return render_template("intro.html")
 
 @app.route("/file")
 def file():
@@ -130,18 +131,6 @@ def wrong():
 @app.route("/countries")
 def showcountries():
     return render_template("countries.html")
-
-
-@app.route('/set_name', methods=["POST"])
-def set_detective_name():
-    name = request.form["name"]
-    db.set_player_name(name)
-    return redirect('/howto')
-
-
-@app.route('/howto')
-def howto():
-    return render_template('howto.html')
 
 @app.route('/get_countries')
 def get_countries():
