@@ -1,233 +1,31 @@
-:root {
-    --white: #EEEBEB;
-    --bordeaux: #8C0F26;
-    --green:#2D5951;
-    --red: #F23558;
-}
-
-@font-face {
-    font-family: "IBM Plex Mono";
-    src: url("../static/fonts/IBMPlexMono-Regular.ttf") format("truetype");
-}
-
-html {
-    font-family: "IBM Plex Mono", sans-serif;
-}
-
-body {
-    background-image: url("/static/images/dash board BG.webp");
-    align-items: center;
-}
-
-
 .dashboard {
-    width: 100%;
+    width: 80%;
     margin: auto;
     align-self: center;
     align-content: center;
     color: #EEEBEB;
     display: grid;
-}
-
-.dashboard header {
-   display: flex;
-   margin: 2.5rem;
-   box-sizing: border-box;
-   height: 7rem;
-}
-
-#logoho {
-    width:60%;
-    height: 7rem;
-    margin-left: 2rem;
-
-}
-
-#logoho img {
-    width: 18rem;
-    height: 7rem;
-}
-
-#player {
-    width: 20%;
-    background-color: #8C0F26;
-    margin-right: 2rem;
-    border-radius: 3rem;
-    padding: 1.5rem 1rem 1rem 1.5rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 16px;
-}
-
-#player img {
-    width: 3rem;
-    height: 3rem;
-    display: inline-block;
-}
-
-#location {
-    width:20%;
-    background-color: #8C0F26;
-    border-radius: 3rem;
-    padding: 1.5rem 1.5rem 1.5rem 3rem;
-    box-sizing: border-box;
-    margin-right: 2rem;
-    font-size: 16px;
-    justify-content: center;
-}
-
-#location p {
-    margin: 0;
-}
-
-#location img {
-    width: 2rem;
-    height: 2rem;
-}
-
-.dashboard main {
-    width: 80%;
-    align-content: center;
     border-radius: 3rem;
     background-color: rgba(45, 89, 81, 0.7);
     display: block;
-    margin: auto;
 }
 
-.dashboard main h1{
-    font-size: 2.5rem;
-    text-align: center;
-    padding-top: 2rem;
-    margin: 0;
-}
-
-#hint {
+form{
+    display: flex;
     align-content: center;
-    padding: 3rem 5rem 3rem 5rem;
 }
 
-form {
-    width: 80%;
-    margin: auto;
-    display: flex;
+.hint-container{
+    height: 15vh;
 }
 
-.answerinput {
-    display: block;
-    width: 80%;
-    height: 3.5rem;
-    border: 2px solid #EEEBEB;
-    margin: 3rem;
-    background: transparent;
-    color: #EEEBEB;
-    font-family: "IBM Plex Mono", sans-serif;
-    font-size: 18px;
-    font-weight: bold;
+.dashboard-button{
+    width: 14vw !important;
+    height: 10vh !important;
 }
 
-::placeholder {
-    color: #EEEBEB;
-    font-size: 18px;
-    font-family: "IBM Plex Mono", sans-serif;
-}
-
-input[type=submit] {
-    display: block;
-    width: 20%;
-    height: 3.5rem;
-    margin: 3rem;
-    background-color: #8C0F26;
-    color: #EEEBEB;
-    font-family: "IBM Plex Mono", sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 2rem;
-}
-
-input[type=submit]:hover {
-    display: block;
-    width: 20%;
-    height: 3.5rem;
-    margin: 3rem;
-    background-color: #EEEBEB;
-    color: #8C0F26;
-    font-family: "IBM Plex Mono", sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 2rem;
-}
-
-.dashboard footer {
-    display: flex;
-    margin: 1.5rem 3rem 3rem 3rem;
-    justify-content: space-evenly;
-}
-
-#ricinastat {
+footer{
     display: flex;
     flex-wrap: wrap;
-    width: 30%;
-    margin-left: 2rem;
-    background-color: #EEEBEB;
-    color: #8C0F26;
-    justify-content: space-evenly;
-    border-radius: 3rem;
-}
-
-#ricinastat h2{
-    width: 100%;
-    text-align: center;
-}
-
-.ricina img{
-    height: 3rem;
-    width: 4rem;
-}
-
-#missionleft {
-    width: 20%;
-    margin: 0 1.5rem 0 1.5rem;
-    padding-top: 1rem;
-    border-radius: 3rem;
-    background-color: #8C0F26;
-    text-align: center;
-    line-height: 2.5rem;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-#missionleft p {
-    margin: 0
-}
-
-#buttons {
-    width: 50%;
-    justify-content: space-evenly;
-    display: flex;
-    flex-wrap: nowrap;
-    margin-right: 2rem;
-    line-height: 2.5rem;
-}
-
-.dashboardbutton {
-    width: calc(100%/3);
-    margin: 1rem;
-    background-color: #EEEBEB;
-    color: #8C0F26;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: "IBM Plex Mono", sans-serif;
-    border-radius: 3rem;
-}
-
-.dashboardbutton:hover {
-    width: calc(100%/3);
-    margin: 1rem;
-    background-color: #8C0F26;
-    color: #EEEBEB;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: "IBM Plex Mono", sans-serif;
-    border-radius: 3rem;
+    margin-top: 1rem !important;
 }

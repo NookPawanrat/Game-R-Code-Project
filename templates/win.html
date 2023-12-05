@@ -2,34 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Win</title>
-     <link rel="stylesheet" type="text/css" href="../static/win.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../static/countries.js" defer></script>
+    <link rel="stylesheet" href="../static/index.css">
+    <title>R-Code Porject</title>
 </head>
 <body>
-    <div id="logo">
-        <img src="../static/images/logo.png" height="157" width="268">
-    </div>
-
-    <div id="content-box">
-        <h2 class="title">CONGRATULATIONS!</h2>
+    <img src="../static/images/logo%20ho.webp" class="logo">
+    <div class="popup-container">
+        <h2 class="title green">CONGRATULATIONS!</h2>
         <p class="text">You catch the criminal in time.<br>
             Thank you for saving the world from Ricina!
         </p>
-        <img class='badge' src="../static/images/badge%20block.png" height="360" width="640"/>
-        <p class="name">{{name}}</p>
-        <p class="number">{{number}}</p>
-
-        <p class="small-text">Mission:{{}}<br>
-            Success:{{}}<br>
-            Fail:{{}}
-        </p>
+        <div class="popup-inside-container">
+            <div class="container badge-container">
+                <img src="../static/images/badge%20icon.webp" class="badge-image">
+                <div class="text-badge">
+                    <p>Agent: {{name}}</p>
+                    <p>Agent number: {{number}}</p>
+                </div>
+            </div>
+            <div class="congrats-text-container">
+                <p>Mission:{{}}</p>
+                <p>Success:{{}}</p>
+                <p>Fail:{{}}</p>
+            </div>
+        </div>
     </div>
 
-    <div class="again">
-            <form action="#" >
-            <input type="button" value="PLAY AGAIN">
-            </form>
-    </div>
+   <form action="#" >
+       <input class="button" type="button" value="PLAY AGAIN" onclick="nextMission()">
+   </form>
 </body>
 </html>

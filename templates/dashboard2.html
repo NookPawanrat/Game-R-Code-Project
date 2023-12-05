@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Life+Savers:wght@400;700&family=Maitree:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/dashboard.css">
+    <link rel="stylesheet" href="../static/countries.css">
+    <link rel="stylesheet" href="../static/index.css">
+    <script src="/static/script/dashboard_script.js" defer></script>
+    <title>R-code Project</title>
+</head>
+<body>
+<header class="dashboard-container">
+    <img src="../static/images/logo ho.webp" class="logo logo-countries">
+    <nav class="flex-container-center">
+        <section class="container badge-container margin">
+            <img src="../static/images/badge%20icon.webp" class="badge-image">
+            <div class="text-badge">
+                <p>Agent: {{name}}</p>
+                <p>Agent number: {{number}}</p>
+            </div>
+        </section>
+        <section class="container badge-container margin">
+            <div class="text-badge">
+                <p class="text-location">You are now in:</p>
+                <div class="flex-container-center">
+                    <img class="location-image" src="/static/images/location%20icon.webp" alt="An map pin icon">
+                    <p class="flex-end">{{country}}</p>
+                </div>
+            </div>
+        </section>
+    </nav>
+</header>
+<main class="dashboard">
+        <h1 class="title">Mission</h1>
+        <div class="text hint-container">{{hint}}</div>
+        <form action="http://127.0.0.1:5000/answer" method="POST">
+            <input class="input" type="text" name="answer" placeholder="Enter your answer...">
+            <input class="button" type="submit" name="submit" value="SEND">
+        </form>
+</main>
+<footer class="popup-inside-container">
+        <div class="container-ricina">
+            <p>Ricina Status:</p>
+            <div class="ricina-images">
+                <img class='ricina-img' src="../static/images/ricina%20fill.png" >
+                <img class='ricina-img' src="../static/images/ricina%20fill.png" >
+                <img class='ricina-img' src="../static/images/ricina%20fill.png" >
+                <img class='ricina-img' src="../static/images/ricina%20fill.png" >
+                <img class='ricina-img' src="../static/images/ricina%20fill.png" >
+            </div>
+        </div>
+        <div class="container container-to-win">
+                <span class="numbers-to-win">4</span>
+                <p class="missions-to-win"> misions to win</p>
+        </div>
+        <button class="exit-button exit-bordeaux-border dashboard-button" id="howtoplay">HOW TO PLAY</button>
+        <button class="exit-button exit-bordeaux-border dashboard-button" id="showcountries">SHOW ALL COUNTRIES</button>
+        <button class="exit-button exit-bordeaux-border dashboard-button" id="exit">EXIT</button>
+</footer>
+</body>
+</html>

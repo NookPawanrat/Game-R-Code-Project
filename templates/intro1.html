@@ -6,15 +6,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Life+Savers:wght@400;700&family=Maitree:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/start.css">
+    <link rel="stylesheet" href="../static/intro.css">
     <link rel="stylesheet" href="../static/index.css">
     <title>R-code Project</title>
 </head>
-
 <body>
-    <div class="start-div">
-        <img class="big-logo" src="/static/images/logo%20ver%20wh.webp" alt="Logo">
-        <button class="button">START</button>
+    <div class="video-container">
+        <video class="video">
+             <source src="/static/video/R-Code-Intro.mp4" type="video/mp4">
+        </video>
+         <section class="button-space">
+            <button id="how-to-play" class="exit-button exit-bordeaux-border" onclick="location.href='howto.html'">HOW TO PLAY</button>
+            <button id ="skip" class="exit-button exit-bordeaux-border" type="button" onclick="location.href='mission-file.html'">SKIP</button>
+        </section>
     </div>
+
 </body>
 </html>
