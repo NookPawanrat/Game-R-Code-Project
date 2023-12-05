@@ -1,16 +1,22 @@
+:root {
+    --white: #EEEBEB;
+    --bordeaux: #8C0F26;
+    --green:#2D5951;
+    --red: #F23558;
+}
 @font-face {
     font-family: 'bold';
-    src: url("../static/font/Bold.ttf");
+    src: url("../font/IBMPlexMono-Bold.ttf") format("truetype");
+
 }
 @font-face {
     font-family: 'regular';
-    src: url("../static/font/Regular.ttf");
+    src: url("../font/IBMPlexMono-Regular.ttf") format("truetype");
 }
-
 body {
     margin: 0;
     padding: 0;
-    background: url(../static/images/page-photo.png) center center fixed;
+    background: url("../images/background.webp") center center fixed;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -39,17 +45,18 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-.again input{
+
+.try input{
     background-color: #EEEBEB;
     border: none;
     color:#8C1026;
     font-size: 20px;
     font-family: bold;
-    padding-left: 10px;
+    padding-left: 14px;
     cursor: pointer;
 }
 
-.again {
+.try {
     padding: 10px;
     display: inline-block;
     font-size: 20px;
@@ -63,49 +70,81 @@ body {
     top: 85%;
     left: 45%;
     position: absolute;
+
 }
-.title {
+
+.incorrect {
     text-align: center;
     padding: 10px;
-    font-family:"bold";
+    font-family: bold;
     font-size: 50px;
     color: #2D5951;
 }
 .text{
-    text-align: center;
+     text-align: center;
     padding: 10px;
-    font-family: "regular";
+    font-family: regular;
     font-size: 28px;
     color: #26010B;
 }
 
-.small-text{
-    position: fixed;
-    right: 350px;
-    top: 270px;
-    font-family: "regular";
-    font-size: 25px;
-    color: #26010B;
-}
-
-.badge{
-     position: absolute;
-    top: 36%;
-    left: 6%;
-}
-.name{
+.status{
     position: absolute;
-    top: 64%;
-    left: 36%;
-    font-family: "regular";
-    color: #EEEBEB;
-    font-size: 20px;
+    top: 60%;
+    left: 8%;
+}
+.mission{
+    position: absolute;
+    top:64%;
+    left: 35%;
 }
 .number{
     position: absolute;
-    top: 72%;
+    top: 78%;
     left: 41%;
     font-family: "regular";
     color: #EEEBEB;
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.location{
+    position: absolute;
+    top: 62%;
+    left: 60%;
+}
+
+.country{
+    position: absolute;
+    top: 78%;
+    left: 74%;
+    font-family: "regular";
+    color: #EEEBEB;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.ricina1{
+     position: absolute;
+     top: 80%;
+     left: 15%;
+}
+.ricina2{
+     position: absolute;
+     top: 80%;
+     left: 20%;
+}
+.ricina3{
+     position: absolute;
+     top: 80%;
+     left: 23%;
+}
+.ricina4{
+     position: absolute;
+     top: 80%;
+     left: 26%;
+}
+.ricina5{
+     position: absolute;
+     top: 80%;
+     left: 29%;
 }
