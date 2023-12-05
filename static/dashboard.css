@@ -29,3 +29,7 @@ footer{
     flex-wrap: wrap;
     margin-top: 1rem !important;
 }
+
+.container-to-win{
+    align-self: center;
+}

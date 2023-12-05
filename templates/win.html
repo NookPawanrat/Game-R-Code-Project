@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../static/countries.js" defer></script>
     <link rel="stylesheet" href="../static/index.css">
     <title>R-Code Porject</title>
+    <meta charset="UTF-8">
 </head>
 <body>
     <img src="../static/images/logo%20ho.webp" class="logo">
     <div class="popup-container">
         <h2 class="title green">CONGRATULATIONS!</h2>
-        <p class="text">You catch the criminal in time.<br>
+        <p class="text medium">You've catched the criminal in time.<br>
             Thank you for saving the world from Ricina!
         </p>
         <div class="popup-inside-container">
-            <div class="container badge-container">
+            <div class="flex-container-center container badge-container">
                 <img src="../static/images/badge%20icon.webp" class="badge-image">
                 <div class="text-badge">
                     <p>Agent: {{name}}</p>
@@ -30,7 +30,7 @@
         </div>
     </div>
 
-   <form action="#" >
+   <form class="flex-container-center" action="#" >
        <input class="button" type="button" value="PLAY AGAIN" onclick="nextMission()">
    </form>
 </body>

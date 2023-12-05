@@ -1,12 +1,11 @@
-
-
 .video{
     display: flex;
-    margin: auto;
-    margin-top: 5vh;
+    margin: 5vh auto auto auto ;
     align-self: center;
     border-radius:20px;
-    width: 100%;
+    border: none;
+    width: 90vw;
+    height: 80vh;
 }
 
 .button-space{

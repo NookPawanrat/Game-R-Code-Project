@@ -1,0 +1,22 @@
+.howto-inner-div {
+    overflow: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    margin: -3px auto;
+    border: 2px solid var(--bordeaux);
+    border-radius: 30px;
+    width: 80%;
+    height: 50%;
+    padding: 3rem;
+}
+
+.howto-inner-div::-webkit-scrollbar{
+    display: none
+}
+
+.howto-p{
+    scroll-snap-align: start;
+    padding: 3rem;
+    width: 70%;
+    margin: auto;
+}

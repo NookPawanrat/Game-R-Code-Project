@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="../static/countries.js" defer></script>
     <link rel="stylesheet" href="../static/index.css">
-    <link rel="stylesheet" type="text/css" href="../static/win.css">
-    <title>Incorrect</title>
+    <title>R-Code Project</title>
+    <meta charset="UTF-8">
 </head>
 <body>
    <img src="../static/images/logo%20ho.webp" class="logo">
     <div class="popup-container">
         <h2 class="title bordeaux">INCORRECT!</h2>
-        <p class="text">Sorry Agent {{name}}, your answer is not correct.<br><br>
+        <p class="text medium">Sorry Agent {{name}}, your answer is not correct.<br><br>
             Now you have {{times}} chances to fail<br>
             to fail with {{times}} more missions to catch the criminal.
         </p>
         <div class="popup-inside-container">
             <div class="container-ricina">
-                <p>Ricina Status:</p>
+                <p class="small">Ricina Status:</p>
                 <div class="ricina-images">
                     <img class='ricina-img' src="../static/images/ricina%20fill.png" >
                     <img class='ricina-img' src="../static/images/ricina%20fill.png" >
@@ -29,18 +26,17 @@
                     <img class='ricina-img' src="../static/images/ricina%20fill.png" >
                 </div>
             </div>
-            <div class="container container-to-win">
+            <div class="flex-container-center container container-to-win">
                 <span class="numbers-to-win">4</span>
                 <p class="missions-to-win"> misions to win</p>
             </div>
-            <div class="container container-location">
+            <div class="flex-container-center container container-location">
                 <p class="text-location">You are now in:</p>
                 <p >{{country}}</p>
             </div>
         </div>
     </div>
 
-
-   <form action="#" >
+   <form class="flex-container-center" action="#" >
             <input class="button" type="button" value="TRY AGAIN" onclick="nextMission()">
    </form>
