@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect, url_for
-
 import json
 import db_functions as db
 import mysql.connector
@@ -11,7 +10,7 @@ connection = mysql.connector.connect(
     port=3306,
     database='crime_game',
     user='root',
-    password='053197',
+    password='123456',
     autocommit=True
 )
 
