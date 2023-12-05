@@ -3,6 +3,7 @@ class Player:
         self.name = player_name
         self.id = player_id
         self.current_location = current_location
+
     def set_player_name(self,player_name):
         sql = f"INSERT INTO detective_game(detective_name) VALUES('{player_name}');"
         cursor = connection.cursor()
@@ -89,13 +90,9 @@ class Game:
         airport = get_airport(location)
         if location == visited_locations[correct_visited_locations + 1]:
             correct_visited_locations += 1
-            print(
-                f"\nYou solved the case and went to the correct country!\nYou are now in {airport}, {location},\none step closer to catch ContaMega Inc. Good job!")
             return True
         else:
             update_crime_location(player_id, 10)
-            print(
-                f"\nYour answer is wrong. One more box of Ricina is dropped by ContaMega.\nYou are now in {airport}, {location}.")
             return False
 
     def check_if_win_or_lose(self,player_id):
@@ -104,12 +101,8 @@ class Game:
         global name
         crime_location = get_criminal_location(player_id)
         if visited_locations[correct_visited_locations] == crime_location:
-            print(
-                f"\nYou have caught ContaMega Inc. and saved the world, the R-code\nproject worked as expected and Ricina is being controlled by our\nenviromental services.\n\nWell done, detective {name}, you solved the case as we expected.")
             return True
         elif criminal_escaped:
-            print(
-                f"\nContaMega Inc. has released all the Ricina into the world.\nThe world is dying and we are hopeless. Maybe in another\nlife, detective {name}...")
             return True
         else:
             return None
