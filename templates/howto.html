@@ -33,11 +33,6 @@
             <p class="howto-p text small">Of course, you have the right to exit the task at any time, and the button of <span style="color: red; font-weight: bold">Exit</span> on the lower right can help you. But we hope you can persist to the end, catch the criminals and stop the spread of Ricina.GOOD LUCK!!</p>
         </div>
     </div>
-    <button type="submit" class="flex-container-center button">OK</button>
-    <script>
-        document.querySelector('button').addEventListener('click', function(){
-          window.location.href = 'http://127.0.0.1:5000/dashboard';
-        })
-    </script>
+    <button type="submit" class="flex-container-center button" onclick="location.href=document.referrer">OK</button>
 </body>
 </html>

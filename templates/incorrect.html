@@ -13,8 +13,8 @@
     <div class="popup-container">
         <h2 class="title bordeaux">INCORRECT!</h2>
         <p class="text medium">Sorry Agent {{name}}, your answer is not correct.<br><br>
-            Now you have {{times}} chances to fail<br>
-            to fail with {{times}} more missions to catch the criminal.
+            Now you have {{failTimes}} chances to fail<br>
+            to fail with {{missionLeft}} more missions to catch the criminal.
         </p>
         <div class="popup-inside-container">
             <div class="container-ricina">
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="flex-container-center container container-to-win">
-                <span class="numbers-to-win">4</span>
+                <span class="numbers-to-win">{{missionLeft}}</span>
                 <p class="missions-to-win"> misions to win</p>
             </div>
             <div class="flex-container-center container container-location">
@@ -39,7 +39,7 @@
     </div>
 
    <form class="flex-container-center" action="#" >
-            <input class="button" type="button" value="TRY AGAIN" onclick="nextMission()">
+            <input class="button" type="button" value="TRY AGAIN" onclick="location.href='dashboard'">
    </form>
 </body>
 </html>
