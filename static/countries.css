@@ -1,3 +1,54 @@
+:root {
+    --white: #EEEBEB;
+    --bordeaux: #8C0F26;
+    --green:#2D5951;
+    --red: #F23558;
+    --font: 'IBM Plex Mono', monospace;
+    --small-text: 20px;
+    --medium-text: 25px;
+    --big-text: 50px;
+    --border: 20px;
+}
+
+
+body{
+    background-image: url("/static/images/background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom right;
+    min-height: 100vh;
+}
+
+.logo{
+    margin: 2rem;
+    height: 5rem;
+    width: 13rem;
+}
+
+.button:hover {
+    color: var(--bordeaux);
+    background-color: var(--white);
+}
+
+.button {
+    display: flex;
+    height: 4rem;
+    border: none;
+    margin: 1rem auto;
+    width: 18rem;
+    flex-wrap: wrap;
+    cursor: pointer;
+    font-weight: bold;
+    align-self: center;
+    color: var(--white);
+    letter-spacing: 1px;
+    transition: all 0.25s;
+    border-radius: var(--border);
+    font-size: var(--medium-text);
+    background-color: var(--bordeaux);
+}
+
+
 .map{
     display: flex;
     margin: auto;
@@ -5,3 +56,9 @@
     width: 90vw;
     border-radius: 50px;
 }
+
+.flex-container-center{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+ }
