@@ -18,6 +18,6 @@ function init_map(countries){
 
     for(c of countries){
         let marker = L.marker([c["lat"], c["long"]], { icon: ricina_icon }).addTo(map);
-        marker.bindPopup(c['country'] + ": " + c["name"] ).openPopup();
+        marker.bindPopup(c['country']).openPopup();
     }
 }
