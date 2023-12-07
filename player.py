@@ -1,8 +1,9 @@
 import db_functions as db
 
+
 class Player:
 
-    player_id= 1
+    player_id = 1
 
     def __init__(self):
         self.player_name = name

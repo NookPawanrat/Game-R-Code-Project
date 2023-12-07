@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import json
-import game.py
-import player.py
+import game
+import player as p
 
 app = Flask(__name__)
 
@@ -18,7 +18,7 @@ def detective_name():
 @app.route('/set_name', methods=["POST"])
 def set_detective_name():
     name = request.form["name"]
-    db.set_player_name(name)
+    p.name(name)
     return redirect('/intro')
 
 
@@ -64,8 +64,8 @@ def wrong():
 
 @app.route("/countries")
 def showcountries():
-    country= db.get_available_countries()
-    return render_template("country.html", data= country)
+    country = [{'name': 'Argentina'},{'name': 'Brazil'}, {'name': 'China'}]
+    return render_template("country.html", data = country)
 
 
 @app.route('/get_countries')
