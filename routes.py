@@ -1,76 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for
 import json
-import db_functions as db
-import mysql.connector
-
+import game.py
+import player.py
 
 app = Flask(__name__)
-
-connection = mysql.connector.connect(
-    host='127.0.0.1',
-    port=3306,
-    database='crime_game',
-    user='root',
-    password='123456',
-    autocommit=True
-)
-
-countries = []
-sql = "SELECT country_name, hint FROM hints "
-sql += "ORDER BY RAND() LIMIT 5;"
-cursor = connection.cursor()
-cursor.execute(sql)
-results = cursor.fetchall()
-for result in results:
-    country = {"name": result[0], "hint": result[1]}
-    countries.append(country)
-
-
-class Game:
-    def __init__(self, player, limit=5):
-        # one player object for every game object
-        self.player = player
-        # how many Ricina can be disposed before player lose the game
-        self.limit = limit
-        # a list of country objects, randomly generated when game object created
-        self.visited_location = countries
-        # the last country object in visited_location
-        self.crime_location = self.visited_location[-1]
-        self.solved = 0
-
-    def set_random_locations(self):
-        pass
-
-    def is_correct(self):
-        pass
-
-    def update_crime_location(self):
-        pass
-
-    def get_hint(self):
-        pass
-
-    def is_win(self):
-        pass
-
-
-class Player:
-    def __init__(self, player_name, id, current_location='base'):
-        self.name = player_name
-        self.id = id
-        self.current_location = current_location
-
-
-# use ORM?
-class Country:
-    def __init__(self, country_name, clue):
-        self.name = country_name
-        self.clue = clue
-
-
-p = Player("Sherlock", 1, "base")
-test = Game(p)
-
 
 @app.route("/")
 def home():
@@ -127,6 +60,13 @@ def correct():
 def wrong():
     return render_template("incorrect.html")
 
+@app.route("/win")
+def if_win():
+    return render_template("win.html")
+
+@app.route("/lose")
+def if_lose():
+    return render_template("gameOver.html")
 
 @app.route("/countries")
 def showcountries():
