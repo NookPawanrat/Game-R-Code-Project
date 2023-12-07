@@ -1,15 +1,23 @@
+:root {
+    --white: #EEEBEB;
+    --bordeaux: #8C0F26;
+    --green:#2D5951;
+    --red: #F23558;
+}
 @font-face {
     font-family: 'bold';
-    src: url("../static/font/Bold.ttf");
+    src: url("../font/IBMPlexMono-Bold.ttf") format("truetype");
+
 }
 @font-face {
     font-family: 'regular';
-    src: url("../static/font/Regular.ttf");
+    src: url("../font/IBMPlexMono-Regular.ttf") format("truetype");
 }
+
 body {
     margin: 0;
     padding: 0;
-    background: url(../static/images/page-photo.png) center center fixed;
+    background: url("../images/background.webp") center center fixed;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -39,17 +47,17 @@ body {
     text-align: center;
 }
 
-.try input{
+.next input{
     background-color: #EEEBEB;
     border: none;
     color:#8C1026;
-    font-size: 20px;
-    font-family: bold;
-    padding-left: 14px;
+    font-size: 19px;
+    font-family: 'bold';
+    padding-left: 3px;
     cursor: pointer;
 }
 
-.try {
+.next {
     padding: 10px;
     display: inline-block;
     font-size: 20px;
@@ -63,20 +71,20 @@ body {
     top: 85%;
     left: 45%;
     position: absolute;
-
 }
 
-.incorrect {
+
+.correct {
     text-align: center;
     padding: 10px;
-    font-family: bold;
+    font-family: 'bold';
     font-size: 50px;
     color: #2D5951;
 }
 .text{
      text-align: center;
     padding: 10px;
-    font-family: regular;
+    font-family: "regular";
     font-size: 28px;
     color: #26010B;
 }
@@ -88,7 +96,7 @@ body {
 }
 .mission{
     position: absolute;
-    top:64%;
+    top: 64%;
     left: 35%;
 }
 .number{
@@ -99,6 +107,7 @@ body {
     color: #EEEBEB;
     font-size: 15px;
     font-weight: bold;
+
 }
 .location{
     position: absolute;
@@ -107,7 +116,7 @@ body {
 }
 
 .country{
-    position: absolute;
+     position: absolute;
     top: 78%;
     left: 74%;
     font-family: "regular";
@@ -124,20 +133,20 @@ body {
 .ricina2{
      position: absolute;
      top: 80%;
-     left: 20%;
+     left: 18%;
 }
 .ricina3{
      position: absolute;
      top: 80%;
-     left: 23%;
+     left: 21%;
 }
 .ricina4{
      position: absolute;
      top: 80%;
-     left: 26%;
+     left: 24%;
 }
 .ricina5{
      position: absolute;
      top: 80%;
-     left: 29%;
+     left: 27%;
 }
