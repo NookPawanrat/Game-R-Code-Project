@@ -23,7 +23,7 @@
     <section>
         <h1>Mission</h1>
         <div id="hint">{{hint}}</div>
-        <form action="http://127.0.0.1:5000/answer" method="POST">
+        <form action="{{ url_answer }}" method="POST">
             <input class="answerinput" type="text" name="answer" placeholder="Enter your answer...">
             <input type="submit" name="submit" value="SEND">
         </form>
@@ -43,9 +43,9 @@
         <p>missions to win</p>
     </div>
     <div id="buttons">
-        <button class="dashboardbutton" id="howtoplay">HOW TO PLAY</button>
-        <button class="dashboardbutton" id="showcountries">SHOW ALL COUNTRIES</button>
-        <button class="dashboardbutton" id="exit">EXIT</button>
+        <a href="{{ url_howtoplay }}"><button class="dashboardbutton" id="howtoplay">HOW TO PLAY</button></a>
+        <a href="{{ url_countries }}"><button class="dashboardbutton" id="showcountries">SHOW ALL COUNTRIES</button></a>
+        <a href="{{ url_exit }}"><button class="dashboardbutton" id="exit">EXIT</button></a>
     </div>
 </footer>
 </div>

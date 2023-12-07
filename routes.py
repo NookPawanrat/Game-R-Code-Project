@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
-import json
+# import json
+# import game
+# import player as p
 import db_functions as db
 
 app = Flask(__name__)
@@ -29,45 +31,48 @@ def mission_file():
 
 @app.route("/howtoplay", endpoint='howtoplay')
 def howtoplay():
-    return render_template("howto.html")
+    return render_template("howto.html", url_dashboard='dashboard')
 
 @app.route("/dashboard", endpoint='dashboard')
 def dashboard():
-    return render_template("dashboard.html", playerName=p.name, playerNumber=p.id, country=p.current_location,
-                           hint=test.visited_location[0]["hint"], missionLeft=len(test.visited_location)-test.solved)
+    return render_template("dashboard.html",url_answer='answer', url_howtoplay='howtoplay', url_countries='countries', url_exit='exit')
 
 
-@app.route("/answer", methods=['POST'])
+@app.route("/answer", methods=['POST'], endpoint='answer')
 def answer():
     if request.method == 'POST':
         ans = request.form["answer"]
-        if ans == test.visited_location[0]["name"]:
-            return redirect(url_correct = url_for('correct'))
+        if ans == "correct":
+            return redirect(url_for('correct'))
         else:
-            return redirect(url_correct = url_for('wrong'))
+            return redirect(url_for('wrong'))
 
 
 # we could render our win/lose template here
 @app.route("/answercorrect", endpoint='correct')
 def correct():
-    return "Congratulations! Your answer is correct!"
-
+    return render_template("correct.html", name="sherlock", country="Finland", failTimes="5", missionLeft="5", url_dashboard='dashboard')
 
 @app.route("/answerwrong", endpoint='wrong')
 def wrong():
-    return "Sorry, your answer is wrong."
+    return render_template("incorrect.html", url_dashboard='dashboard')
 
 
 
 @app.route("/countries", endpoint='countries')
 def showcountries():
-    return render_template("countries.html")
+    country = [{'name': 'Argentina'}, {'name': 'Brazil'}, {'name': 'China'}]
+    return render_template("country.html", data=country)
 
 
 #Do we need get_counties()??
 @app.route('/get_countries', endpoint='get_countries')
 def get_countries():
     return db.get_available_countries()
+
+@app.route('/exit', endpoint='exit')
+def if_exit():
+    return render_template("exit.html", url_home=url_for('home'), url_dashboard='dashboard')
 
 
 if __name__ == "__main__":
