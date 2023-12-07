@@ -29,12 +29,14 @@ def get_countries():
 
 
 def get_available_countries():
+    print("HOLIS")
     countries = "SELECT name, latitude_deg, longitude_deg, hints.country_name FROM airport, hints WHERE hints.iso_country = airport.iso_country GROUP BY airport.iso_country"
     cursor = connection.cursor()
     cursor.execute(countries)
     result = cursor.fetchall()
     countries = []
     for row in result:
+        print(row)
         countries.append({"name": row[0], "lat": row[1], "long": row[2], "country": row[3]})
     return countries
 

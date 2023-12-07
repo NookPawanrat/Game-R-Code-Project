@@ -29,7 +29,7 @@ def howto():
 
 @app.route("/intro")
 def intro():
-        return render_template("intro.html")
+    return render_template("intro.html")
 
 @app.route("/file")
 def file():
@@ -37,8 +37,9 @@ def file():
 
 @app.route("/dashboard")
 def dashboard():
-    return render_template("dashboard.html", playerName=game.p.name, playerNumber=game.p.id, country=game.p.current_location,
-                           hint=game.test.visited_location[0]["hint"], missionLeft=len(game.test.visited_location)-game.test.solved)
+    return render_template("dashboard.html", playerName=p.name, playerNumber=p.id, country=p.current_location,
+                           hint=test.visited_location[0]["hint"], missionLeft=len(test.visited_location)-test.solved)
+
 
 @app.route("/answer", methods=['POST'])
 def answer():
@@ -60,17 +61,12 @@ def correct():
 def wrong():
     return render_template("incorrect.html")
 
-@app.route("/win")
-def if_win():
-    return render_template("win.html")
-
-@app.route("/lose")
-def if_lose():
-    return render_template("gameOver.html")
 
 @app.route("/countries")
 def showcountries():
-    return render_template("countries.html")
+    country= db.get_available_countries()
+    return render_template("country.html", data= country)
+
 
 @app.route('/get_countries')
 def get_countries():
