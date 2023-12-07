@@ -11,7 +11,7 @@ class Game:
         return self.countries_togo[self.player.correct]['hint']
 
     def answer_correct(self, answer):
-        if answer == self.countries_togo[self.solved]['name']:
+        if answer == self.countries_togo[self.player.correct]['name']:
             self.player.correct += 1
             return True
         else:
