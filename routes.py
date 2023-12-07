@@ -1,10 +1,16 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 import json
 import db_functions as db
 import mysql.connector
 
 
 app = Flask(__name__)
+
+
+@app.route("/get_data", methods=["GET"])
+def get_data():
+    data = {'full': 5, 'left': 3}
+    return jsonify(data)
 
 
 @app.route("/")
