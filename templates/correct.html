@@ -11,8 +11,8 @@
     <div class="popup-container">
         <h2 class="title green">CORRECT!</h2>
         <p class="text medium">Thank you Agent {{name}} for saving {{country}}!<br><br>
-            Now you have {{times}} chances to fail<br>
-            to fail with {{fail-times}} more missions to catch the criminal.
+            Now you have {{failTimes}} chances to fail<br>
+            with {{missionLeft}} more missions to catch the criminal.
         </p>
         <div class="popup-inside-container">
             <div class="container-ricina">
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="flex-container-center container container-to-win">
-                <span class="numbers-to-win">4</span>
+                <span class="numbers-to-win">{{missionLeft}}</span>
                 <p class="missions-to-win"> misions to win</p>
             </div>
             <div class="flex-container-center container container-location">
@@ -36,7 +36,7 @@
         </div>
     </div>
    <form action="#" >
-            <input class="button flex-container-center" type="button" value="NEXT MISSION" onclick="nextMission()">
+            <input class="button flex-container-center" type="button" value="NEXT MISSION" onclick="location.href='dashboard'">
    </form>
 </body>
 </html>

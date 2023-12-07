@@ -5,6 +5,7 @@ import player as p
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def home():
     return render_template("start.html")
@@ -37,15 +38,13 @@ def file():
 
 @app.route("/dashboard")
 def dashboard():
-    return render_template("dashboard.html", playerName=p.name, playerNumber=p.id, country=p.current_location,
-                           hint=test.visited_location[0]["hint"], missionLeft=len(test.visited_location)-test.solved)
-
+    return render_template("dashboard.html")
 
 @app.route("/answer", methods=['POST'])
 def answer():
     if request.method == 'POST':
         ans = request.form["answer"]
-        if ans == test.visited_location[0]["name"]:
+        if ans == "correct":
             return redirect(url_for("correct"))
         else:
             return redirect(url_for("wrong"))
@@ -54,7 +53,7 @@ def answer():
 # we could render our win/lose template here
 @app.route("/answercorrect")
 def correct():
-    return render_template("correct.html")
+    return render_template("correct.html", name="sherlock", country="Finland", failTimes="5", missionLeft="5")
 
 
 @app.route("/answerwrong")
