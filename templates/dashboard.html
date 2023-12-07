@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Life+Savers:wght@400;700&family=Maitree:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/dashboard.css">
     <link rel="stylesheet" href="../static/css/index.css">
-    <script src="/static/script/js/dashboard_script.js" defer></script>
+    <script src="../static/js/dashboard_script.js" defer></script>
     <title>R-code Project</title>
 </head>
 <body>
@@ -36,11 +33,10 @@
 <main class="dashboard">
         <h1 class="title">Mission</h1>
         <div class="text hint-container">{{hint}}</div>
-        <form action="http://127.0.0.1:5000/answer" method="POST">
+        <form  action="http://127.0.0.1:5000/answer" method="POST">
             <input class="input" type="text" name="answer" placeholder="Enter your answer...">
-            <input class="button" type="submit" name="submit" value="SEND">
+            <input class="flex-container-center button" type="submit" name="submit" value="SEND">
         </form>
-    </section>
 </main>
 <footer class="flex-container-center popup-inside-container">
         <div class="container-ricina">

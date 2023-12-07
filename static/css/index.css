@@ -30,25 +30,25 @@ body{
     background-size: cover;
     background-position: bottom right;
     min-height: 100vh;
+    overflow: hidden;
 }
 
 .logo{
-    margin: 2rem;
-    height: 5rem;
-    width: 13rem;
+    margin: 2%;
+    height: 14vh;
+    width: auto;
 }
 
 .flex-container-center{
     display: flex;
     align-content: center;
     justify-content: center;
-    height: 80%;
 }
 
 .title {
     text-align: center;
     font-weight: bold;
-    padding: 10px;
+    padding: 1rem;
     font-size: var(--big-text);
 }
 
@@ -161,8 +161,8 @@ body{
     background-color: var(--bordeaux);
     color: var(--white);
     border-radius: 30px;
-    height: 5rem;
-    width: 12rem;
+    height: 12vh;
+    width: 25vh;
 }
 
 
@@ -240,7 +240,7 @@ body{
 }
 
 .input{
-    margin: 2rem auto;
+    margin: auto;
     height: 1rem;
     width: 15rem;
     background-color: transparent;
@@ -250,4 +250,8 @@ body{
     font-family: var(--font);
     font-size: 22px;
     color: var(--white);
+}
+
+.detective_name_button{
+    margin-top: 2rem;
 }

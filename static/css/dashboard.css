@@ -1,14 +1,12 @@
 .dashboard {
+    height: 50vh;
     width: 80vw;
-    height: 60vh;
     margin: auto;
     align-self: center;
     align-content: center;
     color: #EEEBEB;
-    display: grid;
     border-radius: 3rem;
     background-color: rgba(45, 89, 81, 0.7);
-    display: block;
 }
 
 form{
@@ -17,7 +15,7 @@ form{
 }
 
 .hint-container{
-    height: 30vh;
+    height: 18vh;
 }
 
 .dashboard-button{
