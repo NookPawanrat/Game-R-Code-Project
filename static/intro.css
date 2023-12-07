@@ -4,14 +4,14 @@
     font-family: 'IBM Plex Mono', monospace;
 }
 body {
-    background: url("/static/images/dashboard.png");
+    background: url("../static/images/dashboard.png");
     height: 100vh;
     background-size: cover;
     position: relative;
 }
 .vdo-space {
-    width: 1850px;
-    height: 760px;
+    width: 1420px;
+    height: 580px;
     background: #EEEBEB;
     border-radius:30px;
 
