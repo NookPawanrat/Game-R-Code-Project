@@ -59,7 +59,6 @@ body{
     display: flex;
     height: 4rem;
     border: none;
-    margin: auto;
     width: 18rem;
     flex-wrap: wrap;
     cursor: pointer;
@@ -190,7 +189,7 @@ body{
 }
 
 .badge-container{
-    width: 28rem;
+    width: 25rem;
     height: 9rem;
     }
 
