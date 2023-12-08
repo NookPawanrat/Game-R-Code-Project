@@ -5,25 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/index.css">
     <link rel="stylesheet" type="text/css" href="../static/css/win.css">
+    <script src="../static/js/script.js" defer></script>
     <title>R-code Project</title>
 </head>
 <body>
    <img src="../static/images/logo%20ho.webp" class="logo">
     <div class="popup-container">
         <h2 class="title green">CORRECT!</h2>
-        <p class="text medium">Thank you Agent {{name}} for saving {{country}}!<br><br>
-            Now you have {{failTimes}} chances to fail<br>
-            with {{missionLeft}} more missions to catch the criminal.
+        <p class="text medium">Thank you Agent <span class="player_name">{{name}}</span> for saving <span class="player_location">{{country}}</span>!<br><br>
+            Now you have <span class="left_life">{{life}}</span> chances to fail<br>
+            with <span class="mission_left">{{missionLeft}}</span> more missions to catch the criminal.
         </p>
         <div class="popup-inside-container">
             <div class="container-ricina">
                 <p>Ricina Status:</p>
                 <div class="ricina-images">
-                    <img class='ricina-img' src="../static/images/ricina%20fill.png" >
-                    <img class='ricina-img' src="../static/images/ricina%20fill.png" >
-                    <img class='ricina-img' src="../static/images/ricina%20fill.png" >
-                    <img class='ricina-img' src="../static/images/ricina%20fill.png" >
-                    <img class='ricina-img' src="../static/images/ricina%20fill.png" >
+
                 </div>
             </div>
             <div class="flex-container-center container container-to-win">
@@ -32,12 +29,13 @@
             </div>
             <div class="flex-container-center container container-location">
                 <p class="text-location">You are now in:</p>
-                <p >{{country}}</p>
+                <p ><span class="player_location">{{country}}</span></p>
             </div>
         </div>
     </div>
    <form action="#" >
             <input class="button flex-container-center" type="button" value="NEXT MISSION" onclick="location.href='dashboard'">
    </form>
+
 </body>
 </html>

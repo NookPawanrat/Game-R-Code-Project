@@ -4,9 +4,8 @@ document.addEventListener("DOMContentLoaded", function(){
   fetch('/get_data')
         .then(response => response.json())
         .then(data => {
-          console.log(data)
-          const fulllife = data.full;
-          const lifeleft = data.left;
+          const fulllife = data.full_life;
+          const lifeleft = data.left_life;
           const target = document.querySelector('.ricina-images');
           target.innerHTML = '';
           for (let i = 0; i<fulllife-lifeleft; i++) {
@@ -21,6 +20,12 @@ document.addEventListener("DOMContentLoaded", function(){
             life.src = '../static/images/ricina%20fill.png';
             target.appendChild(life);
             }
+          document.querySelector('.player_name').innerText = data.player_name;
+          document.querySelector('.player_id').innerText = data.player_id;
+          document.querySelector('.player_location').innerText = data.player_location;
+          document.querySelector('.numbers-to-win').innerText = data.mission_left;
+          document.querySelector('.mission_left').innerText = data.mission_left;
+          document.querySelector('.left_life').innerText = data.left_life;
         })
         .catch(error => console.error('Error:', error));
 })

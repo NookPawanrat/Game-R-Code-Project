@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route("/get_data", methods=["GET"])
 def get_data():
-    data = {'full': 5, 'left': 3}
+    data = {"player_name": "Sherlock", "player_id": 1, "player_location": "Finland", "mission_left": 5, "full_life": 5, "left_life": 3}
     return jsonify(data)
 
 
@@ -60,7 +60,7 @@ def answer():
 # we could render our win/lose template here
 @app.route("/answercorrect")
 def correct():
-    return render_template("correct.html", name="sherlock", country="Finland", failTimes="5", missionLeft="5")
+    return render_template("correct.html")
 
 
 @app.route("/answerwrong")
