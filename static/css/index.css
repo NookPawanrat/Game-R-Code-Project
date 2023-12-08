@@ -59,6 +59,7 @@ body{
     display: flex;
     height: 4rem;
     border: none;
+    margin: 0 auto;
     width: 18rem;
     flex-wrap: wrap;
     cursor: pointer;
