@@ -28,7 +28,7 @@ class Player:
     def get_correct_answer(self):
         return self.correct
 
-    def set_correct_answer(self, answer):
+    def set_answer(self, answer):
         self.correct += answer
 
     def get_incorrect_answer(self):

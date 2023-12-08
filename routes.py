@@ -46,17 +46,22 @@ def howtoplay():
 @app.route("/dashboard", endpoint='dashboard')
 def dashboard():
     global player
-    player_id= player.get_id()
+    global game
+    player_id = player.get_id()
     player_name = player.get_name()
     player_location = player.get_location()
-    missions_left = 5 + (5 - player.get_lives())
-    return render_template("dashboard.html", url_answer='answer', name=player_name, country=player_location, missions=missions_left, id= player_id)
+    missions_left = 5 + player.get_incorrect_answer() - player.get_correct_answer()
+    hint = game.get_hint(player)
+    return render_template("dashboard.html", url_answer='answer', name=player_name, country=player_location, missions=missions_left, id= player_id, hint= hint)
 
 @app.route("/answer", methods=['POST'], endpoint='answer')
 def answer():
+    global game
+    global player
     if request.method == 'POST':
         ans = request.form["answer"]
-        if ans == "correct":
+        if ans.title() == game.get_answer():
+            player.set_location(ans.title())
             return redirect(url_for("correct"))
         else:
             return redirect(url_for('wrong'))
@@ -65,11 +70,16 @@ def answer():
 # we could render our win/lose template here
 @app.route("/answercorrect")
 def correct():
+    player.set_answer(1)
     return render_template("correct.html")
 
 
 @app.route("/answerwrong")
 def wrong():
+    global player
+    global game
+    player.set_lives(1)
+    #game.crime_move()
     return render_template("incorrect.html")
 
 

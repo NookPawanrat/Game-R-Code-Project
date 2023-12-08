@@ -16,12 +16,8 @@ class Game:
     def get_hint(self, player):
         return self.countries_togo[player.correct]['hint']
 
-    def answer_correct(self, answer):
-        if answer == self.countries_togo[self.player.correct]['name']:
-            self.player.correct += 1
-            return True
-        else:
-            return False
+    def get_answer(self):
+        return self.countries_togo[self.player.correct]['name'];
 
     def crime_move(self):
         new = db.update_crime_location()

@@ -31,7 +31,7 @@
 </header>
 <main class="dashboard">
         <h1 class="title">Mission</h1>
-        <div class="text hint-container">{{hint}}</div>
+        <div class="text hint-container">{{hint | safe }}</div>
         <form action="{{ url_answer }}" method="POST">
             <input class="input" type="text" name="answer" placeholder="Enter your answer...">
             <input class="flex-container-center button" type="submit" name="submit" value="SEND">
