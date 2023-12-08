@@ -7,9 +7,9 @@ import db_functions as db
 app = Flask(__name__)
 
 
-@app.route("/", endpoint='home')
-def home():
-    return render_template("start.html", url_home=url_for('home'), url_detective_name=url_for('detective_name'))
+@app.route("/", endpoint='start')
+def start():
+    return render_template("start.html", url_start=url_for('start'), url_detective_name=url_for('detective_name'))
 
 @app.route('/detective_name', endpoint='detective_name')
 def detective_name():
@@ -62,17 +62,12 @@ def wrong():
 @app.route("/countries", endpoint='countries')
 def showcountries():
     country = [{'name': 'Argentina'}, {'name': 'Brazil'}, {'name': 'China'}]
-    return render_template("country.html", data=country)
+    return render_template("country.html", data=country, url_dashboard='dashboard')
 
-
-#Do we need get_counties()??
-@app.route('/get_countries', endpoint='get_countries')
-def get_countries():
-    return db.get_available_countries()
 
 @app.route('/exit', endpoint='exit')
 def if_exit():
-    return render_template("exit.html", url_home=url_for('home'), url_dashboard='dashboard')
+    return render_template("exit.html", url_start=url_for('start'), url_dashboard='dashboard')
 
 
 if __name__ == "__main__":

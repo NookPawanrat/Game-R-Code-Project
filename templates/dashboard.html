@@ -33,7 +33,7 @@
 <main class="dashboard">
         <h1 class="title">Mission</h1>
         <div class="text hint-container">{{hint}}</div>
-        <form action="http://127.0.0.1:5000/answer" method="POST">
+        <form action="{{ url_answer }}" method="POST">
             <input class="input" type="text" name="answer" placeholder="Enter your answer...">
             <input class="button" type="submit" name="submit" value="SEND">
         </form>
@@ -54,9 +54,9 @@
                 <span class="numbers-to-win">4</span>
                 <p class="missions-to-win"> misions to win</p>
         </div>
-        <button class="exit-button exit-bordeaux-border dashboard-button" id="howtoplay" onclick="location.href='howto'">HOW TO PLAY</button>
-        <button class="exit-button exit-bordeaux-border dashboard-button" id="showcountries" onclick="location.href='countries'">SHOW ALL COUNTRIES</button>
-        <button class="exit-button exit-bordeaux-border dashboard-button" id="exit" onclick="location.href='exit'">EXIT</button>
+        <button class="exit-button exit-bordeaux-border dashboard-button" id="howtoplay" onclick="location.href='{{ url_howtoplay }}'">HOW TO PLAY</button>
+        <button class="exit-button exit-bordeaux-border dashboard-button" id="showcountries" onclick="location.href='{{ url_countries }}'">SHOW ALL COUNTRIES</button>
+        <button class="exit-button exit-bordeaux-border dashboard-button" id="exit" onclick="location.href='{{url_exit}}'">EXIT</button>
 </footer>
 </body>
 </html>
