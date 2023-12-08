@@ -3,36 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exit</title>
-    <link rel="stylesheet" type="text/css"  href="../static/exit.css">
+    <link rel="stylesheet" href="../static/css/index.css">
     <script src="../static/js/exitOrBackToMission.js"></script>
-
-
+    <title>R-code Project</title>
 </head>
 <body>
-
-    <div id="logo">
-        <img src="../static/images/logo.png" height="157" width="268"/>
-    </div>
-
-    <div id="content-box">
-
-        <p class="red-text">Exit?</p>
-        <p class="black-text">Do you really want to exit <br>the R-Code project?</p>
-
-        <div class="button-red">
-            <form action="#" >
-            <input type="button" value="QUIT" onclick="quitClick()">
-            </form>
-        </div>
-        <div  class="button-green">
-            <form action="#">
-            <input type="button" value="BACK TO MISSION" onclick="backToMission()">
+    <img src="../static/images/logo%20ho.webp" class="logo">
+    <div class="flex-container-center popup-container">
+        <p class="title bordeaux">Exit?</p>
+        <p class="text medium">Do you really want to exit <br>the R-Code project?</p>
+        <form class="flex-container-center" action="#" >
+            <input class="exit-button exit-bordeaux-border" type="button" value="QUIT" onclick="">
+            <input class="exit-green-border exit-button" type="button" value="BACK TO MISSION" onclick="location.href='dashboard'">
         </form>
-        </div>
-
-
     </div>
-
 </body>
 </html>

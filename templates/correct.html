@@ -3,49 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Correct</title>
-    <link rel="stylesheet" type="text/css"  href="../static/correct.css">
-    <script src="../static/js/answersCheck.js"></script>
-
+    <link rel="stylesheet" href="../static/css/index.css">
+    <title>R-code Project</title>
 </head>
 <body>
-    <div id="logo">
-        <img src="../static/images/logo.png" height="157" width="268">
-    </div>
-
-    <div id="content-box">
-        <h2 class="correct">CORRECT!</h2>
-        <p class="text">Thank you Agent {{name}} for saving {{country}}!<br><br>
-            Now you have {{times}} chances to fail<br>
-            to fail with {{times}} more missions to catch the criminal.
+   <img src="../static/images/logo%20ho.webp" class="logo">
+    <div class="popup-container">
+        <h2 class="title green">CORRECT!</h2>
+        <p class="text medium">Thank you Agent {{name}} for saving {{country}}!<br><br>
+            Now you have {{failTimes}} chances to fail<br>
+            with {{missionLeft}} more missions to catch the criminal.
         </p>
-        <img class='status' src="../static/images/13.png" height="216" width="384"/>
-
-
-        <img class='ricina1' src="../static/images/ricina%20fill.png" height="45" width="81">
-         <img class='ricina2' src="../static/images/ricina%20fill.png" height="45" width="81">
-        <img class='ricina3' src="../static/images/ricina%20fill.png" height="45" width="81">
-        <img class='ricina4' src="../static/images/ricina%20fill.png" height="45" width="81">
-        <img class='ricina5' src="../static/images/ricina%20fill.png" height="45" width="81">
-
-
-
-        
-        <img class='mission' src="../static/images/14.png" height="180" width="320"/>
-        <p class="number">{{times}}</p>
-        <img class='location' src="../static/images/location%20block%201.png" height="216" width="384"/>
-        <p class="country">{{country}}</p>
+        <div class="popup-inside-container">
+            <div class="container-ricina">
+                <p>Ricina Status:</p>
+                <div class="ricina-images">
+                    <img class='ricina-img' src="../static/images/ricina%20fill.png" >
+                    <img class='ricina-img' src="../static/images/ricina%20fill.png" >
+                    <img class='ricina-img' src="../static/images/ricina%20fill.png" >
+                    <img class='ricina-img' src="../static/images/ricina%20fill.png" >
+                    <img class='ricina-img' src="../static/images/ricina%20fill.png" >
+                </div>
+            </div>
+            <div class="flex-container-center container container-to-win">
+                <span class="numbers-to-win">{{missionLeft}}</span>
+                <p class="missions-to-win"> misions to win</p>
+            </div>
+            <div class="flex-container-center container container-location">
+                <p class="text-location">You are now in:</p>
+                <p >{{country}}</p>
+            </div>
+        </div>
     </div>
-
-
-    <div class="next">
-            <form action="#" >
-            <input type="button" value="NEXT MISSION" onclick="nextMission()">
-            </form>
-    </div>
-
-
-
-
+   <form action="#" >
+            <input class="button flex-container-center" type="button" value="NEXT MISSION" onclick="location.href='dashboard'">
+   </form>
 </body>
 </html>

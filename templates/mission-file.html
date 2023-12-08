@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/mission-file.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+    <script src="../static/js/countries.js" defer></script>
+    <link rel="stylesheet" href="../static/index.css">
+    <title>R-Code Project</title>
     <meta charset="UTF-8">
-    <title>R-Code Project Game</title>
-    <link rel="stylesheet" href="/static/mission-file.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lato&family=Quicksand&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="logo">
-        <img src="/static/images/logo%20ho.webp" alt="Logo">
-    </div>
-    <div class="mission-file">
-        <img id="file-nor" src="/static/images/file.webp" alt="mission file">
-        <a href="{{url_dashboard}}"><img id="file-hover" src="/static/images/file%20hover.webp" alt="mission file hover"></a>
-    </div>
+    <img src="../static/images/logo ho.webp" class="logo logo-countries">
+    <img class="mission-file" id="file-nor" src="/static/images/file.webp" onclick="location.href='/dashboard'" alt="mission file">
 </body>
+<script>
+    let file= document.getElementById("file-nor");
+    file.addEventListener("mouseover", ()=>
+        file.src = "/static/images/file hover.webp"
+    )
+    file.addEventListener("mouseout", ()=>
+        file.src="/static/images/file.webp"
+    )
+</script>
 </html>

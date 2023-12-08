@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R-code Project</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="../static/css/countries.css">
+</head>
+<body>
+    <img src="../static/images/logo%20ho.webp" class="logo" alt="logo">
+    <div id="map" class="map"></div>
+    <button class="button flex-container-center" onclick="location">RETURN</button>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script >
+        document.addEventListener('DOMContentLoaded', function () {
+        var map = L.map('map').setView([0, 0], 2);
+
+         let ricina_icon = L.icon({
+            iconUrl: '../static/images/ricina icon.webp',
+            iconSize: [50, 30],
+            popupAnchor: [0, -10]
+          });
+
+         countries= {{ data | tojson }};
+         for(c of countries){
+            let marker = L.marker([c["lat"], c["long"]], { icon: ricina_icon }).addTo(map);
+            marker.bindPopup(c['country']).openPopup();
+        }
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+        });
+
+
+    </script>
+</body>
+</html>

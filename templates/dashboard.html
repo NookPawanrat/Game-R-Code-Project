@@ -2,53 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
-    <link href="../static/dashboard.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <script src="../static/js/dashboard_script.js" defer></script>
+    <title>R-code Project</title>
 </head>
 <body>
-<div class="dashboard">
-<header>
-    <div id="logoho">
-       <img src="/static/images/logo%20ho.webp" alt="Detective icon and the game title 'R-CODE Project'">
-    </div>
-    <div id="player">
-        <img src="/static/images/badge%20icon.webp" alt="An icon of police badge">
-        <p>Agent: {{playerName}}<br>Agent number: {{playerNumber}}</p>
-    </div>
-    <div id="location">
-        <p>You are now in:<br><img src="/static/images/location%20icon.webp" alt="An map pin icon">{{country}}</p>
-    </div>
+<header class="dashboard-container">
+    <img src="../static/images/logo ho.webp" class="logo logo-countries">
+    <nav class="flex-container-center">
+        <section class="flex-container-center container badge-container margin">
+            <img src="../static/images/badge%20icon.webp" class="badge-image">
+            <div class="text-badge">
+                <p>Agent: {{name}}</p>
+                <p>Agent number: {{number}}</p>
+            </div>
+        </section>
+        <section class="flex-container-center container badge-container margin">
+            <div class="text-badge">
+                <p class="text-location">You are now in:</p>
+                <div class="flex-container-center">
+                    <img class="location-image" src="/static/images/location%20icon.webp" alt="An map pin icon">
+                    <p class="flex-end">{{country}}</p>
+                </div>
+            </div>
+        </section>
+    </nav>
 </header>
-<main>
-    <section>
-        <h1>Mission</h1>
-        <div id="hint">{{hint}}</div>
-        <form action="{{ url_answer }}" method="POST">
-            <input class="answerinput" type="text" name="answer" placeholder="Enter your answer...">
-            <input type="submit" name="submit" value="SEND">
+<main class="dashboard">
+        <h1 class="title">Mission</h1>
+        <div class="text hint-container">{{hint}}</div>
+        <form action="http://127.0.0.1:5000/answer" method="POST">
+            <input class="input" type="text" name="answer" placeholder="Enter your answer...">
+            <input class="button" type="submit" name="submit" value="SEND">
         </form>
     </section>
 </main>
-<footer>
-    <div id="ricinastat">
-        <h2>Ricina Status</h2>
-        <div class="ricina"><img src="/static/images/ricina%20icon.webp"></div>
-        <div class="ricina"><img src="/static/images/ricina%20icon.webp"></div>
-        <div class="ricina"><img src="/static/images/ricina%20icon.webp"></div>
-        <div class="ricina"><img src="/static/images/ricina%20icon.webp"></div>
-        <div class="ricina"><img src="/static/images/ricina%20icon.webp"></div>
-    </div>
-    <div id="missionleft">
-        <p>{{missionLeft}}</p>
-        <p>missions to win</p>
-    </div>
-    <div id="buttons">
-        <a href="{{ url_howtoplay }}"><button class="dashboardbutton" id="howtoplay">HOW TO PLAY</button></a>
-        <a href="{{ url_countries }}"><button class="dashboardbutton" id="showcountries">SHOW ALL COUNTRIES</button></a>
-        <a href="{{ url_exit }}"><button class="dashboardbutton" id="exit">EXIT</button></a>
-    </div>
+<footer class="flex-container-center popup-inside-container">
+        <div class="container-ricina">
+            <p class="small">Ricina Status:</p>
+            <div class="ricina-images">
+                <img class='ricina-img' src="../static/images/ricina%20fill.png" >
+                <img class='ricina-img' src="../static/images/ricina%20fill.png" >
+                <img class='ricina-img' src="../static/images/ricina%20fill.png" >
+                <img class='ricina-img' src="../static/images/ricina%20fill.png" >
+                <img class='ricina-img' src="../static/images/ricina%20fill.png" >
+            </div>
+        </div>
+        <div class="flex-container-center container container-to-win">
+                <span class="numbers-to-win">4</span>
+                <p class="missions-to-win"> misions to win</p>
+        </div>
+        <button class="exit-button exit-bordeaux-border dashboard-button" id="howtoplay" onclick="location.href='howto'">HOW TO PLAY</button>
+        <button class="exit-button exit-bordeaux-border dashboard-button" id="showcountries" onclick="location.href='countries'">SHOW ALL COUNTRIES</button>
+        <button class="exit-button exit-bordeaux-border dashboard-button" id="exit" onclick="location.href='exit'">EXIT</button>
 </footer>
-</div>
-<script src="/static/script/dashboard_script.js" defer></script>
 </body>
 </html>

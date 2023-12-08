@@ -2,23 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>R-Code Project Game</title>
-    <link rel="stylesheet" href="../static/intro.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lato&family=Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/intro.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <title>R-code Project</title>
 </head>
 <body>
-    <div class="vdo-space">
-        <iframe width="1420" height="580"
-                src="https://www.youtube.com/embed/R54DFTXVAoM?si=zww7CICzCl9Z26Mm/autoplay=1"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-        </iframe>
-    </div>
+    <iframe class="video"
+            src="https://www.youtube.com/embed/R54DFTXVAoM?si=zww7CICzCl9Z26Mm/autoplay=1"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+    </iframe>
     <div class="button-space">
-        <a href="{{url_howtoplay}}"><button id="how-to-play">HOW TO PLAY</button></a>
-        <button id ="skip" type="button" onclick="location.href='{{ url_mission_file }}'">SKIP</button>
+        <button id="how-to-play" class="exit-button exit-bordeaux-border" type="button" onclick="location.href='howto'">HOW TO PLAY</button>
+        <button id ="skip" class="exit-button exit-bordeaux-border" type="button" onclick="location.href='file'">SKIP</button>
     </div>
 
 </body>
