@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import json
-import game
-import player as p
+#import game
+#import player as p
 
 app = Flask(__name__)
 
@@ -24,13 +24,13 @@ def set_detective_name():
 def intro():
     return render_template('intro.html', url_mission_file='mission_file', url_howtoplay='howtoplay')
 
-@app.route('/mission_file', endpoint='mission_file')
+@app.route('/mission_file')
 def mission_file():
-    return render_template("mission-file.html",url_dashboard='dashboard')
+    return render_template("mission-file.html")
 
-@app.route("/howtoplay", endpoint='howtoplay')
+@app.route("/howtoplay")
 def howtoplay():
-    return render_template("howto.html", url_dashboard='dashboard')
+    return render_template("howto.html")
 
 @app.route("/dashboard", endpoint='dashboard')
 def dashboard():
@@ -48,24 +48,23 @@ def answer():
 
 
 # we could render our win/lose template here
-@app.route("/answercorrect", endpoint='correct')
+@app.route("/answercorrect")
 def correct():
     return render_template("correct.html", name="sherlock", country="Finland", failTimes="5", missionLeft="5", url_dashboard='dashboard')
 
-@app.route("/answerwrong", endpoint='wrong')
+@app.route("/answerwrong")
 def wrong():
-    return render_template("incorrect.html", url_dashboard='dashboard')
+    return render_template("incorrect.html")
 
 
-
-@app.route("/countries", endpoint='countries')
+@app.route("/countries")
 def showcountries():
     country = [{'name': 'Argentina'}, {'name': 'Brazil'}, {'name': 'China'}]
     return render_template("country.html", data=country)
 
-@app.route('/exit', endpoint='exit')
+@app.route('/exit')
 def if_exit():
-    return render_template("exit.html", url_home=url_for('home'), url_dashboard='dashboard')
+    return render_template("exit.html")
 
 
 if __name__ == "__main__":
