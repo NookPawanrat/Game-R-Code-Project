@@ -22,10 +22,13 @@ document.addEventListener("DOMContentLoaded", function(){
             }
           document.querySelector('.player_name').innerText = data.player_name;
           document.querySelector('.player_id').innerText = data.player_id;
-          document.querySelector('.player_location').innerText = data.player_location;
           document.querySelector('.numbers-to-win').innerText = data.mission_left;
           document.querySelector('.mission_left').innerText = data.mission_left;
           document.querySelector('.left_life').innerText = data.left_life;
+          const locationelements = document.querySelectorAll('.player_location');
+          for (let l of locationelements) {
+            l.innerText = data.player_location;
+          }
         })
         .catch(error => console.error('Error:', error));
 })
