@@ -28,9 +28,12 @@ body{
     background-image: url("/static/images/background.webp");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom right;
     min-height: 100vh;
     overflow: hidden;
+}
+
+.background-detective{
+    background-image: url("/static/images/start_bg.webp");
 }
 
 .logo{
@@ -56,7 +59,7 @@ body{
     display: flex;
     height: 4rem;
     border: none;
-    margin: auto;
+    margin: 0 auto;
     width: 18rem;
     flex-wrap: wrap;
     cursor: pointer;
@@ -187,7 +190,7 @@ body{
 }
 
 .badge-container{
-    width: 28rem;
+    width: 25rem;
     height: 9rem;
     }
 
