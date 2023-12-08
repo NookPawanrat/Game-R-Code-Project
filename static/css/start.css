@@ -1,0 +1,14 @@
+.start-div{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.big-logo{
+    margin: 2rem auto;
+    width: 20%;
+}
+
+

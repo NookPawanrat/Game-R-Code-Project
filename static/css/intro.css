@@ -1,0 +1,20 @@
+.video{
+    display: flex;
+    margin: 5vh auto auto auto ;
+    align-self: center;
+    border-radius:20px;
+    border: none;
+    height: 80vh;
+    width: 80vw;
+}
+
+.button-space{
+    display: flex;
+    margin: 1rem;
+    width: 100vw;
+    justify-content: flex-end;
+}
+
+.button{
+    margin: 0 3rem !important;
+}

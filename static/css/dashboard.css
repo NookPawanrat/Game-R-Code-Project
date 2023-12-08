@@ -1,0 +1,34 @@
+.dashboard {
+    height: 50vh;
+    width: 80vw;
+    margin: auto;
+    align-self: center;
+    align-content: center;
+    color: #EEEBEB;
+    border-radius: 3rem;
+    background-color: rgba(45, 89, 81, 0.7);
+}
+
+form{
+    display: flex;
+    align-content: center;
+}
+
+.hint-container{
+    height: 18vh;
+}
+
+.dashboard-button{
+    width: 14vw !important;
+    height: 10vh !important;
+}
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem !important;
+}
+
+.container-to-win{
+    align-self: center;
+}
