@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/dashboard.css">
     <link rel="stylesheet" href="../static/css/index.css">
-    <script src="../static/js/dashboard_script.js" defer></script>
+    <script src="../static/js/script.js" defer></script>
     <title>R-code Project</title>
 </head>
 <body>
@@ -15,8 +15,8 @@
         <section class="flex-container-center container badge-container margin">
             <img src="../static/images/badge%20icon.webp" class="badge-image">
             <div class="text-badge">
-                <p>Agent: {{name}}</p>
-                <p>Agent number: {{number}}</p>
+                <p>Agent: <span class="player_name">{{name}}</span></p>
+                <p>Agent number: <span class="player_id">{{number}}</span></p>
             </div>
         </section>
         <section class="flex-container-center container badge-container margin">
@@ -24,7 +24,7 @@
                 <p class="text-location">You are now in:</p>
                 <div class="flex-container-center">
                     <img class="location-image" src="/static/images/location%20icon.webp" alt="An map pin icon">
-                    <p class="flex-end">{{country}}</p>
+                    <p class="flex-end player_location">{{country}}</p>
                 </div>
             </div>
         </section>
@@ -43,22 +43,16 @@
         <div class="container-ricina">
             <p class="small">Ricina Status:</p>
             <div class="ricina-images">
-                <img class='ricina-img' src="../static/images/ricina%20icon.webp" >
-                <img class='ricina-img' src="../static/images/ricina%20icon.webp" >
-                <img class='ricina-img' src="../static/images/ricina%20icon.webp" >
-                <img class='ricina-img' src="../static/images/ricina%20icon.webp" >
-                <img class='ricina-img' src="../static/images/ricina%20icon.webp" >
+
             </div>
         </div>
         <div class="flex-container-center container container-to-win">
-                <span class="numbers-to-win">4</span>
+                <span class="numbers-to-win"></span>
                 <p class="missions-to-win"> misions to win</p>
         </div>
         <button class="exit-button exit-bordeaux-border dashboard-button" id="howtoplay" onclick="location.href='howtoplay'">HOW TO PLAY</button>
         <button class="exit-button exit-bordeaux-border dashboard-button" id="showcountries" onclick="location.href='countries'">SHOW ALL COUNTRIES</button>
         <button class="exit-button exit-bordeaux-border dashboard-button" id="exit" onclick="location.href='exit'">EXIT</button>
 </footer>
-</div>
-<script src="/static/script/dashboard_script.js" defer></script>
 </body>
 </html>

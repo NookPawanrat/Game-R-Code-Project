@@ -6,9 +6,14 @@ import json
 app = Flask(__name__)
 
 
+
 @app.route("/", endpoint='home')
-def home():
     return render_template("start.html", url_home=url_for('home'), url_detective_name=url_for('detective_name'))
+
+@app.route("/get_data", methods=["GET"])
+def get_data():
+    data = {"player_name": "Sherlock", "player_id": 1, "player_location": "Finland", "mission_left": 5, "full_life": 5, "left_life": 3}
+    return jsonify(data)
 
 @app.route('/detective_name', endpoint='detective_name')
 def detective_name():
@@ -42,7 +47,7 @@ def answer():
     if request.method == 'POST':
         ans = request.form["answer"]
         if ans == "correct":
-            return redirect(url_for('correct'))
+            return redirect(url_for("correct"))
         else:
             return redirect(url_for('wrong'))
 
@@ -50,7 +55,8 @@ def answer():
 # we could render our win/lose template here
 @app.route("/answercorrect")
 def correct():
-    return render_template("correct.html", name="sherlock", country="Finland", failTimes="5", missionLeft="5", url_dashboard='dashboard')
+    return render_template("correct.html")
+
 
 @app.route("/answerwrong")
 def wrong():
