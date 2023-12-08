@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/dashboard.css">
     <link rel="stylesheet" href="../static/css/index.css">
     <title>R-code Project</title>
+    <script src="../static/js/popup.js" defer></script>
+    <link rel="stylesheet" href="../static/css/popup.css">
 </head>
 <body>
 <header class="dashboard-container">
@@ -29,15 +31,20 @@
         </section>
     </nav>
 </header>
+
+      <dialog>
+      <span onclick="closePop()">&#x2715;</span>
+      </dialog>
+
 <main class="dashboard">
         <h1 class="title">Mission</h1>
         <div class="text hint-container">{{hint | safe }}</div>
-        <form action="{{ url_answer }}" method="POST">
+        <form action="{{ url_answer }}" method="POST"  onsubmit="event.preventDefault(); openPop();">
             <input class="input" type="text" name="answer" placeholder="Enter your answer...">
-            <input class="flex-container-center button" type="submit" name="submit" value="SEND">
+            <input class="flex-container-center button"  type="submit" name="submit" value="SEND" >
         </form>
-    </section>
 </main>
+
 <footer class="flex-container-center popup-inside-container">
         <div class="container-ricina">
             <p class="small">Ricina Status:</p>
