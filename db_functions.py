@@ -6,7 +6,7 @@ connection = mysql.connector.connect(
     port=3306,
     database="crime_game",
     user="root",
-    password="",
+    password="123456",
     autocommit=True
 )
 
@@ -28,8 +28,7 @@ def update_player_location(player_id,location):
 
 def start_game():
     countries = []
-    sql = "SELECT country_name, first FROM hints "
-    #In my db the column's name for the hint is 'first' but in yours might be 'hint'. Try to change it if it doesn't work
+    sql = "SELECT country_name, hint FROM hints "
     sql += "ORDER BY RAND() LIMIT 5;"
     cursor = connection.cursor()
     cursor.execute(sql)
@@ -54,3 +53,13 @@ def update_crime_location(player_id, number):
             update_query = f"UPDATE detective_game SET crime_location = '{countries[ran_num]}' WHERE id = {player_id}"
             cursor.execute(update_query)
             break
+
+def get_available_countries():
+    countries = "SELECT name, latitude_deg, longitude_deg, hints.country_name FROM airport, hints WHERE hints.iso_country = airport.iso_country GROUP BY airport.iso_country"
+    cursor = connection.cursor()
+    cursor.execute(countries)
+    result = cursor.fetchall()
+    countries = []
+    for row in result:
+        countries.append({"name": row[0], "lat": row[1], "long": row[2], "country": row[3]})
+    return countries

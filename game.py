@@ -2,13 +2,19 @@ import db_functions as db
 
 
 class Game:
-    def __init__(self, player, countries_togo):
-        self.player = player
-        self.countries_togo = countries_togo
-        self.crime_location = countries_togo[-1]
 
-    def get_hint(self):
-        return self.countries_togo[self.player.correct]['hint']
+    id= 1
+    def __init__(self, player):
+        self.player = player
+        self.countries_togo = db.start_game()
+        self.crime_location = self.countries_togo[-1]
+        self.id= Game.id
+        Game.id += 1
+
+    def get_available_countries(self):
+        return db.get_available_countries()
+    def get_hint(self, player):
+        return self.countries_togo[player.correct]['hint']
 
     def answer_correct(self, answer):
         if answer == self.countries_togo[self.player.correct]['name']:

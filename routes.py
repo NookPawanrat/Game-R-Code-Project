@@ -1,13 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for
 import json
-#import game
-#import player as p
+import game as g
+import player as p
 
 app = Flask(__name__)
 
-
+game = None
+player = None
 
 @app.route("/", endpoint='home')
+def home():
     return render_template("start.html", url_home=url_for('home'), url_detective_name=url_for('detective_name'))
 
 @app.route("/get_data", methods=["GET"])
@@ -22,7 +24,8 @@ def detective_name():
 @app.route('/set_name', methods=["POST"], endpoint='set_name')
 def set_detective_name():
     name = request.form["name"]
-    p.name(name)
+    global player
+    player = p.Player(name)
     return redirect('/intro')
 
 @app.route('/intro', endpoint='intro')
@@ -31,6 +34,9 @@ def intro():
 
 @app.route('/mission_file')
 def mission_file():
+    global game
+    global player
+    game = g.Game(player)
     return render_template("mission-file.html")
 
 @app.route("/howtoplay")
@@ -39,8 +45,12 @@ def howtoplay():
 
 @app.route("/dashboard", endpoint='dashboard')
 def dashboard():
-    return render_template("dashboard.html",url_answer='answer', url_howtoplay='howtoplay', url_countries='countries', url_exit='exit')
-
+    global player
+    player_id= player.get_id()
+    player_name = player.get_name()
+    player_location = player.get_location()
+    missions_left = 5 + (5 - player.get_lives())
+    return render_template("dashboard.html", url_answer='answer', name=player_name, country=player_location, missions=missions_left, id= player_id)
 
 @app.route("/answer", methods=['POST'], endpoint='answer')
 def answer():
@@ -65,8 +75,9 @@ def wrong():
 
 @app.route("/countries")
 def showcountries():
-    country = [{'name': 'Argentina'}, {'name': 'Brazil'}, {'name': 'China'}]
-    return render_template("country.html", data=country)
+    global game
+    countries = game.get_available_countries()
+    return render_template("country.html", data=countries)
 
 @app.route('/exit')
 def if_exit():

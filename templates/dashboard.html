@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/dashboard.css">
     <link rel="stylesheet" href="../static/css/index.css">
-    <script src="../static/js/script.js" defer></script>
     <title>R-code Project</title>
 </head>
 <body>
@@ -16,7 +15,7 @@
             <img src="../static/images/badge%20icon.webp" class="badge-image">
             <div class="text-badge">
                 <p>Agent: <span class="player_name">{{name}}</span></p>
-                <p>Agent number: <span class="player_id">{{number}}</span></p>
+                <p>Agent number: <span class="player_id">{{ id }}</span></p>
             </div>
         </section>
         <section class="flex-container-center container badge-container margin">
@@ -47,7 +46,7 @@
             </div>
         </div>
         <div class="flex-container-center container container-to-win">
-                <span class="numbers-to-win"></span>
+                <p class="missions-to-win"> {{ missions }}</p>
                 <p class="missions-to-win"> misions to win</p>
         </div>
         <button class="exit-button exit-bordeaux-border dashboard-button" id="howtoplay" onclick="location.href='howtoplay'">HOW TO PLAY</button>
