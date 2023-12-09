@@ -25,7 +25,7 @@ def detective_name():
 def set_detective_name():
     name = request.form["name"]
     global player
-    player = p.Player(name)
+    player = p.Player(name.title())
     return redirect('/intro')
 
 @app.route('/intro', endpoint='intro')
@@ -62,25 +62,65 @@ def answer():
         ans = request.form["answer"]
         if ans.title() == game.get_answer():
             player.set_location(ans.title())
-            return redirect(url_for("correct"))
+            return redirect("/correct")
         else:
-            return redirect(url_for('wrong'))
+            return redirect("/incorrect")
 
 
-# we could render our win/lose template here
-@app.route("/answercorrect")
+@app.route("/correct")
 def correct():
+    global player
     player.set_answer(1)
-    return render_template("correct.html")
+    with open('answer.json', 'r') as file:
+        data = json.load(file)
+    c_title = data[0]["correct"]["title"]
+    c_text = data[0]["correct"]["text"]
+    c_button = data[0]["correct"]["button"]
+    c_color = data[0]["correct"]["color"]
+    c_to = data[0]["correct"]["to"]
+    if game.if_win():
+        return redirect("/win")
+    return render_template("correct.html", title=c_title, text=c_text, color=c_color, to=c_to, button=c_button, name=player.get_name())
 
 
-@app.route("/answerwrong")
+@app.route("/incorrect")
 def wrong():
     global player
     global game
     player.set_lives(1)
     #game.crime_move()
-    return render_template("incorrect.html")
+    with open('answer.json', 'r') as file:
+        data = json.load(file)
+    i_title = data[0]["incorrect"]["title"]
+    i_text = data[0]["incorrect"]["text"]
+    i_button = data[0]["incorrect"]["button"]
+    i_color = data[0]["incorrect"]["color"]
+    i_to = data[0]["incorrect"]["to"]
+    if game.criminal_escaped():
+        return redirect("/lose")
+    return render_template("correct.html", title=i_title, text=i_text, color=i_color, to=i_to, button=i_button)
+
+@app.route("/win")
+def win():
+    with open('answer.json', 'r') as file:
+        data = json.load(file)
+    w_title = data[0]["win"]["title"]
+    w_text = data[0]["win"]["text"]
+    w_button = data[0]["win"]["button"]
+    w_color = data[0]["win"]["color"]
+    w_to = data[0]["win"]["to"]
+    return render_template("correct.html", title=w_title, text=w_text, color=w_color, to=w_to, button=w_button)
+
+@app.route("/lose")
+def lose():
+    with open('answer.json', 'r') as file:
+        data = json.load(file)
+    l_title = data[0]["lose"]["title"]
+    l_text = data[0]["lose"]["text"]
+    l_button = data[0]["lose"]["button"]
+    l_color = data[0]["lose"]["color"]
+    l_to = data[0]["lose"]["to"]
+    return render_template("correct.html", title=l_title, text=l_text, color=l_color, to=l_to, button=l_button)
 
 
 @app.route("/countries")

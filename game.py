@@ -17,7 +17,7 @@ class Game:
         return self.countries_togo[player.correct]['hint']
 
     def get_answer(self):
-        return self.countries_togo[self.player.correct]['name'];
+        return self.countries_togo[self.player.correct]['name']
 
     def crime_move(self):
         new = db.update_crime_location()
@@ -34,3 +34,5 @@ class Game:
     def if_win(self):
         return self.player.correct == len(self.countries_togo)
 
+    def criminal_escaped(self):
+        return len(self.countries_togo) == 9

@@ -11,27 +11,11 @@
 <body>
    <img src="../static/images/logo%20ho.webp" class="logo">
     <div class="popup-container">
-        <h2 class="title green">CORRECT!</h2>
-        <p class="text medium">Thank you Agent <span class="player_name">{{name}}</span> (Code No.<span class="player_id">{{number}}</span>) for saving <span class="player_location">{{country}}</span>!<br><br>
-            Now you have <span class="left_life">{{life}}</span> chances to fail<br>
-            with <span class="mission_left">{{missionLeft}}</span> more missions to catch the criminal.
-        </p>
-        <div class="popup-inside-container">
-            <div class="container-ricina">
-                <p>Ricina Status:</p>
-                <div class="ricina-images"></div>
-            </div>
-            <div class="flex-container-center container container-to-win numbers-to-win">{{missionLeft}}
-                <p class="missions-to-win"> misions to win</p>
-            </div>
-            <div class="flex-container-center container container-location">
-                <p class="text-location">You are now in:</p>
-                <p class="player_location">{{country}}</p>
-            </div>
-        </div>
+        <h2 class="title green">{{ title | safe }}</h2>
+        <p class="text medium">{{ text | safe }}</p>
+       <form action="#" >
+                <input class="button flex-container-center" type="button" value="{{ button }}" onclick="location.href='{{ to }}'">
+       </form>
     </div>
-   <form action="#" >
-            <input class="button flex-container-center" type="button" value="NEXT MISSION" onclick="location.href='dashboard'">
-   </form>
 </body>
 </html>

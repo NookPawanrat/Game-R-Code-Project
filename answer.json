@@ -1,0 +1,36 @@
+[
+  {
+    "incorrect":
+      {
+        "title": "INCORRECT!",
+        "color": "bordeaux",
+        "text": "Sorry agent, your answer is not correct.",
+        "button": "NEXT MISSION",
+        "to": "/dashboard"
+      },
+    "correct":
+      {
+        "title": "CORRECT!",
+        "color": "green",
+        "text": "Thank you agent, you avoid the criminals to spread Risina!",
+        "button": "NEXT MISSION",
+        "to": "/dashboard"
+      },
+    "win":
+      {
+        "title": "CONGRATULATIONS!",
+        "color": "green",
+        "text": "You've caught the criminal in time.<br>Thank you for saving the world from Conta Mega Inc.!",
+        "button": "PLAY AGAIN",
+        "to": "/"
+      },
+    "lose":
+      {
+        "title": "GAME OVER!",
+        "color": "bordeaux",
+        "text": "Sorry agent, you did not catch the criminal this time.<br>Try again.",
+        "button": "NEXT MISSION",
+        "to": "/"
+      }
+  }
+]
