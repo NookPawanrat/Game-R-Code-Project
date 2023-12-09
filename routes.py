@@ -14,8 +14,11 @@ def home():
 
 @app.route("/get_data", methods=["GET"])
 def get_data():
-    data = {"player_name": "Sherlock", "player_id": 1, "player_location": "Finland", "mission_left": 5, "full_life": 5, "left_life": 3}
-    return jsonify(data)
+    data = {"full_life": 5, "left_life": player.get_lives()}
+    response = jsonify(data)
+    response.headers['Content-Type'] = 'application/json'
+    return response
+
 
 @app.route('/detective_name', endpoint='detective_name')
 def detective_name():

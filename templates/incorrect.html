@@ -15,12 +15,27 @@
             Now you have <span class="left_life">{{life}}</span> chances to fail<br>
             with <span class="mission_left">{{missionLeft}}</span> more missions to catch the criminal.
         </p>
-       <form class="flex-container-center" action="#" >
-                <input class="flex-container-center button" type="button" value="TRY AGAIN" onclick="location.href='dashboard'">
-       </form>
+        <div class="popup-inside-container">
+            <div class="container-ricina">
+                <p class="small">Ricina Status:</p>
+                <div class="ricina-images">
+
+                </div>
+            </div>
+            <div class="flex-container-center container container-to-win">
+                <span class="numbers-to-win">{{missionLeft}}</span>
+                <p class="missions-to-win"> misions to win</p>
+            </div>
+            <div class="flex-container-center container container-location">
+                <p class="text-location">You are now in:</p>
+                <p><span class="player_location">{{country}}</span></p>
+            </div>
         </div>
     </div>
 
+   <form class="flex-container-center" action="#" >
+            <input class="flex-container-center button" type="button" value="TRY AGAIN" onclick="location.href='dashboard'">
+   </form>
 
 </body>
 </html>
