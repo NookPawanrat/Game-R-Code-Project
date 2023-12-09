@@ -10,29 +10,28 @@
 </head>
 <body>
 <header class="dashboard-container">
-    <img src="../static/images/logo ho.webp" class="logo logo-countries">
-    <nav class="flex-container-center">
-        <section class="flex-container-center container badge-container margin">
-            <img src="../static/images/badge%20icon.webp" class="badge-image">
+    <img src="../static/images/logo ho.webp" class="logo logo-countries logo-dash">
+    <nav class="flex-container-center nav-dash">
+        <section class="flex-container-center container badge-container margin badge-dash">
+            <img src="../static/images/badge%20icon.webp" class="badge-image badge-im-dash ">
             <div class="text-badge">
                 <p>Agent: <span class="player_name">{{name}}</span></p>
                 <p>Agent number: <span class="player_id">{{ id }}</span></p>
             </div>
         </section>
-        <section class="flex-container-center container badge-container margin">
+        <section class="flex-container-center container badge-container margin badge-dash">
             <div class="text-badge">
                 <p class="text-location">You are now in:</p>
                 <div class="flex-container-center">
-                    <img class="location-image" src="/static/images/location%20icon.webp" alt="An map pin icon">
-                    <p class="flex-end player_location medium">{{country}}</p>
+                    <img class="location-image icon-dash" src="../static/images/location%20icon.webp" alt="An map pin icon">
+                    <p class="flex-end player_location">{{country}}</p>
                 </div>
             </div>
         </section>
     </nav>
 </header>
 <main class="dashboard">
-        <h1 class="title">Mission</h1>
-        <div class="text hint-container">{{hint | safe }}</div>
+        <div class="hint-container">{{hint | safe }}</div>
         <form action="{{ url_answer }}" method="POST">
             <input class="input" type="text" name="answer" placeholder="Enter your answer...">
             <input class="flex-container-center button" type="submit" name="submit" value="SEND">
@@ -52,7 +51,7 @@
         </div>
         <div class="flex-container-center container container-to-win">
                 <p class="missions-to-win big"> {{ missions }}</p>
-                <p class="missions-to-win "> misions to win</p>
+                <p class="missions-to-win"> misions to win</p>
         </div>
         <button class="exit-button exit-bordeaux-border dashboard-button" id="howtoplay" onclick="location.href='howtoplay'">HOW TO PLAY</button>
         <button class="exit-button exit-bordeaux-border dashboard-button" id="showcountries" onclick="location.href='countries'">SHOW ALL COUNTRIES</button>

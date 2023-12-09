@@ -28,6 +28,7 @@ body{
     background-image: url("/static/images/background.webp");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: bottom right;
     min-height: 100vh;
     overflow: hidden;
 }
