@@ -5,7 +5,7 @@
         "title": "INCORRECT!",
         "color": "bordeaux",
         "text": "Sorry agent, your answer is not correct.",
-        "button": "NEXT MISSION",
+        "button": "TRY AGAIN",
         "to": "/dashboard"
       },
     "correct":
@@ -29,7 +29,7 @@
         "title": "GAME OVER!",
         "color": "bordeaux",
         "text": "Sorry agent, you did not catch the criminal this time.<br>Try again.",
-        "button": "NEXT MISSION",
+        "button": "PLAY AGAIN",
         "to": "/"
       }
   }

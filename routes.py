@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 import json
 import game as g
 import player as p
@@ -83,7 +83,7 @@ def correct():
     c_to = data[0]["correct"]["to"]
     if game.if_win():
         return redirect("/win")
-    return render_template("correct.html", title=c_title, text=c_text, color=c_color, to=c_to, button=c_button, name=player.get_name())
+    return render_template("answer.html", title=c_title, text=c_text, color=c_color, to=c_to, button=c_button, name=player.get_name())
 
 
 @app.route("/incorrect")
@@ -99,9 +99,9 @@ def wrong():
     i_button = data[0]["incorrect"]["button"]
     i_color = data[0]["incorrect"]["color"]
     i_to = data[0]["incorrect"]["to"]
-    if game.criminal_escaped():
+    if game.criminal_escaped() or player.get_lives() == 0:
         return redirect("/lose")
-    return render_template("correct.html", title=i_title, text=i_text, color=i_color, to=i_to, button=i_button)
+    return render_template("answer.html", title=i_title, text=i_text, color=i_color, to=i_to, button=i_button)
 
 @app.route("/win")
 def win():
@@ -112,7 +112,7 @@ def win():
     w_button = data[0]["win"]["button"]
     w_color = data[0]["win"]["color"]
     w_to = data[0]["win"]["to"]
-    return render_template("correct.html", title=w_title, text=w_text, color=w_color, to=w_to, button=w_button)
+    return render_template("answer.html", title=w_title, text=w_text, color=w_color, to=w_to, button=w_button)
 
 @app.route("/lose")
 def lose():
@@ -123,7 +123,7 @@ def lose():
     l_button = data[0]["lose"]["button"]
     l_color = data[0]["lose"]["color"]
     l_to = data[0]["lose"]["to"]
-    return render_template("correct.html", title=l_title, text=l_text, color=l_color, to=l_to, button=l_button)
+    return render_template("answer.html", title=l_title, text=l_text, color=l_color, to=l_to, button=l_button)
 
 
 @app.route("/countries")

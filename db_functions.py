@@ -6,7 +6,7 @@ connection = mysql.connector.connect(
     port=3306,
     database="crime_game",
     user="root",
-    password="053197",
+    password="123456",
     autocommit=True
 )
 

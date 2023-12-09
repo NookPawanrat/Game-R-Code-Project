@@ -10,8 +10,8 @@
 </head>
 <body>
    <img src="../static/images/logo%20ho.webp" class="logo">
-    <div class="popup-container">
-        <h2 class="title green">{{ title | safe }}</h2>
+    <div class="flex-container-center popup-container">
+        <h2 class="title  {{ color }}">{{ title | safe }}</h2>
         <p class="text medium">{{ text | safe }}</p>
        <form action="#" >
                 <input class="button flex-container-center" type="button" value="{{ button }}" onclick="location.href='{{ to }}'">
