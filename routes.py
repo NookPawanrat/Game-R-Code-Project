@@ -8,6 +8,12 @@ app = Flask(__name__)
 game = None
 player = None
 
+@app.errorhandler(Exception)
+def handle_error(error):
+    print(f"An error occurred: {str(error)}")
+    return redirect("/", code=302)
+
+
 @app.route("/", endpoint='home')
 def home():
     return render_template("start.html", url_home=url_for('home'), url_detective_name=url_for('detective_name'))
@@ -22,7 +28,7 @@ def get_data():
 
 @app.route('/detective_name', endpoint='detective_name')
 def detective_name():
-    return render_template('detective_name.html',url_intro='intro')
+    return render_template('detective_name.html', url_intro='intro')
 
 @app.route('/set_name', methods=["POST"], endpoint='set_name')
 def set_detective_name():
@@ -68,7 +74,6 @@ def answer():
             return redirect("/correct")
         else:
             return redirect("/incorrect")
-
 
 @app.route("/correct")
 def correct():
@@ -136,6 +141,13 @@ def showcountries():
 def if_exit():
     return render_template("exit.html")
 
+@app.route('/close_session')
+def close_session():
+    global player
+    global game
+    player = None
+    game = None
+    return redirect("/")
 
 if __name__ == "__main__":
     app.run(debug=True)
