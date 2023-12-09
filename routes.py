@@ -1,15 +1,24 @@
-from flask import Flask, render_template, request, redirect, url_for
-# import json
-# import game
-# import player as p
-import db_functions as db
+from flask import Flask, render_template, request, redirect, url_for, jsonify
+import json
+import game as g
+import player as p
 
 app = Flask(__name__)
 
+game = None
+player = None
 
-@app.route("/", endpoint='start')
-def start():
-    return render_template("start.html", url_start=url_for('start'), url_detective_name=url_for('detective_name'))
+@app.route("/", endpoint='home')
+def home():
+    return render_template("start.html", url_home=url_for('home'), url_detective_name=url_for('detective_name'))
+
+@app.route("/get_data", methods=["GET"])
+def get_data():
+    data = {"full_life": 5, "left_life": player.get_lives()}
+    response = jsonify(data)
+    response.headers['Content-Type'] = 'application/json'
+    return response
+
 
 @app.route('/detective_name', endpoint='detective_name')
 def detective_name():
@@ -18,59 +27,83 @@ def detective_name():
 @app.route('/set_name', methods=["POST"], endpoint='set_name')
 def set_detective_name():
     name = request.form["name"]
-    db.set_player_name(name)
+    global player
+    player = p.Player(name)
     return redirect('/intro')
 
 @app.route('/intro', endpoint='intro')
 def intro():
     return render_template('intro.html', url_mission_file='mission_file', url_howtoplay='howtoplay')
 
-@app.route('/mission_file', endpoint='mission_file')
+@app.route('/mission_file')
 def mission_file():
-    return render_template("mission-file.html",url_dashboard='dashboard')
+    global game
+    global player
+    game = g.Game(player)
+    return render_template("mission-file.html")
 
-@app.route("/howtoplay", endpoint='howtoplay')
+@app.route("/howtoplay")
 def howtoplay():
-    return render_template("howto.html", url_dashboard='dashboard')
+    return render_template("howto.html")
 
 @app.route("/dashboard", endpoint='dashboard')
 def dashboard():
-    return render_template("dashboard.html",url_answer='answer', url_howtoplay='howtoplay', url_countries='countries', url_exit='exit')
-
+    global player
+    global game
+    player_id = player.get_id()
+    player_name = player.get_name()
+    player_location = player.get_location()
+    missions_left = 5 + player.get_incorrect_answer() - player.get_correct_answer()
+    hint = game.get_hint(player)
+    return render_template("dashboard.html", url_answer='answer', name=player_name, country=player_location, missions=missions_left, id= player_id, hint= hint)
 
 @app.route("/answer", methods=['POST'], endpoint='answer')
 def answer():
+    global game
+    global player
     if request.method == 'POST':
         ans = request.form["answer"]
-        if ans == "correct":
-            return redirect(url_for('correct'))
+        if ans.title() == game.get_answer():
+            player.set_location(ans.title())
+            return redirect(url_for("correct"))
         else:
             return redirect(url_for('wrong'))
 
 
 # we could render our win/lose template here
-@app.route("/answercorrect", endpoint='correct')
+@app.route("/answercorrect")
 def correct():
-    return render_template("correct.html", name="sherlock", country="Finland", failTimes="5", missionLeft="5", url_dashboard='dashboard')
+    player.set_answer(1)
+    player_name = player.get_name()
+    player_location = player.get_location()
+    player_life = player.get_lives()
+    missions_left = 5 + player.get_incorrect_answer() - player.get_correct_answer()
+    return render_template("correct.html", name=player_name, country=player_location, life=player_life, missionLeft=missions_left)
 
-@app.route("/answerwrong", endpoint='wrong')
+
+@app.route("/answerwrong")
 def wrong():
-    return render_template("incorrect.html", url_dashboard='dashboard')
+    global player
+    global game
+    player.set_lives(1)
+    game.crime_move()
+    player_name = player.get_name()
+    player_location = player.get_location()
+    player_life = player.get_lives()
+    missions_left = 5 + player.get_incorrect_answer() - player.get_correct_answer()
+    return render_template("incorrect.html", name=player_name, country=player_location, life=player_life, missionLeft=missions_left)
 
 
-
-@app.route("/countries", endpoint='countries')
+@app.route("/countries")
 def showcountries():
-    country = [{'name': 'Argentina'}, {'name': 'Brazil'}, {'name': 'China'}]
-    return render_template("country.html", data=country, url_dashboard='dashboard')
+    global game
+    countries = game.get_available_countries()
+    return render_template("country.html", data=countries)
 
-
-@app.route('/exit', endpoint='exit')
+@app.route('/exit')
 def if_exit():
-    return render_template("exit.html", url_start=url_for('start'), url_dashboard='dashboard')
+    return render_template("exit.html")
 
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
