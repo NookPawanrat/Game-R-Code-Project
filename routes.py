@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 import json
 import game as g
 import player as p
@@ -14,8 +14,11 @@ def home():
 
 @app.route("/get_data", methods=["GET"])
 def get_data():
-    data = {"player_name": "Sherlock", "player_id": 1, "player_location": "Finland", "mission_left": 5, "full_life": 5, "left_life": 3}
-    return jsonify(data)
+    data = {"full_life": 5, "left_life": player.get_lives()}
+    response = jsonify(data)
+    response.headers['Content-Type'] = 'application/json'
+    return response
+
 
 @app.route('/detective_name', endpoint='detective_name')
 def detective_name():
@@ -71,7 +74,11 @@ def answer():
 @app.route("/answercorrect")
 def correct():
     player.set_answer(1)
-    return render_template("correct.html")
+    player_name = player.get_name()
+    player_location = player.get_location()
+    player_life = player.get_lives()
+    missions_left = 5 + player.get_incorrect_answer() - player.get_correct_answer()
+    return render_template("correct.html", name=player_name, country=player_location, life=player_life, missionLeft=missions_left)
 
 
 @app.route("/answerwrong")
@@ -80,7 +87,11 @@ def wrong():
     global game
     player.set_lives(1)
     #game.crime_move()
-    return render_template("incorrect.html")
+    player_name = player.get_name()
+    player_location = player.get_location()
+    player_life = player.get_lives()
+    missions_left = 5 + player.get_incorrect_answer() - player.get_correct_answer()
+    return render_template("incorrect.html", name=player_name, country=player_location, life=player_life, missionLeft=missions_left)
 
 
 @app.route("/countries")
