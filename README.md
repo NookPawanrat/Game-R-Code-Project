@@ -27,7 +27,7 @@ At the start of the game, Conta Mega Inc. has already disposed Ricina at **5** c
 There are two possible endings:
 
 * You **WIN** the game if you catch the criminals, i.e. you visited all the countries where ContaMega Inc. dropped Ricina, before ContaMega reaches their **10th** destination.
-* You **LOSE** the game if ContaMega Inc. reaches their **10th** target country.
+* You **LOSE** the game if ContaMega Inc. reaches their **10th** target country or if your Ricina Status reaches to 0.
 
 <br>
 
