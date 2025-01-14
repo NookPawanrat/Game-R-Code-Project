@@ -1,10 +1,14 @@
-# R-Code Project: the game project for Metropolia IT Software 2
+# 🔴 R-code Project Game 🕵
 
-R-Code Project is a flight-simulator puzzle game created by Binchi Zhou, Giselle Altamiranda, Pawanrat Santiyanon and Tingyu Pan, first year students from Metropolia University of Applied Sciences. This web-based game is based on the software 1 prototype.
+R-Code Project is a flight-simulator puzzle game created by Binchi Zhou, Giselle Altamiranda, Pawanrat Santiyanon, and Tingyu Pan, first-year students from Metropolia University of Applied Sciences in 2024. 
+
+👉▶️ [Watch the game trial](https://www.youtube.com/watch?v=V9IMpEFxu8U&t=1s) <br/>
+[![Watch the video](https://img.youtube.com/vi/V9IMpEFxu8U&t=1s/0.jpg)](https://www.youtube.com/watch?v=V9IMpEFxu8U&t=1s) <br/>
+
 
 ## Story and background
 
-The story of R-Code Project unveils in the fictional future, where the global industries are under the monopoly of a conglomerate called Conta Mega Inc. Behind the glory of the thriving Conta Mega Inc. lies a conspiracy which only a few people are aware of: Conta Mega Inc. has been secretly disposing Ricina, a toxic byproduct from Conta Mega Inc.’s affiliated factories. To hide their conducts from the public, Conta Mega Inc. has been randomly dropping a fraction of this toxic substance around the world, one country at a time. According to the ongoing investigation, five portions of Ricina have been disposed at five different locations so far. 
+The story of R-Code Project unveils in the fictional future, where the global industries are under the monopoly of a conglomerate called Conta Mega Inc. Behind the glory of the thriving Conta Mega Inc. lies a conspiracy which only a few people are aware of: Conta Mega Inc. has been secretly disposing of Ricina, a toxic byproduct from Conta Mega Inc.’s affiliated factories. To hide their conducts from the public, Conta Mega Inc. has been randomly dropping a fraction of this toxic substance around the world, one country at a time. According to the ongoing investigation, five portions of Ricina have been disposed at five different locations so far. 
 
 The player is a special agent and environment specialist. The player is asked to investigate the case, track the location of the substances, and eventually arrest Conta Mega Inc.’s toxic disposal team and press charges before Ricina pollutes every corner of the planet Earth.
 
