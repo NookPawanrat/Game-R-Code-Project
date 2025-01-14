@@ -2,8 +2,8 @@
 
 R-Code Project is a flight-simulator puzzle game created by Binchi Zhou, Giselle Altamiranda, Pawanrat Santiyanon, and Tingyu Pan, first-year students from Metropolia University of Applied Sciences in 2024. 
 
-👉▶️ [Watch the game trial](https://www.youtube.com/watch?v=V9IMpEFxu8U&t=1s) <br/>
-[![Watch the video](https://img.youtube.com/vi/V9IMpEFxu8U&t=1s/0.jpg)](https://www.youtube.com/watch?v=V9IMpEFxu8U&t=1s) <br/>
+👉▶️ [Watch the game trial](https://www.youtube.com/watch?v=V9IMpEFxu8U) <br/>
+[![Watch the video](https://img.youtube.com/vi/V9IMpEFxu8U/0.jpg)](https://www.youtube.com/watch?v=V9IMpEFxu8U) <br/>
 
 
 ## Story and background
